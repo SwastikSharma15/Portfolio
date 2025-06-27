@@ -114,8 +114,8 @@ function render() {
         ctx.globalCompositeOperation = 'screen';
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.globalCompositeOperation = 'lighter';
-        ctx.strokeStyle = 'hsla(' + Math.round(f.update()) + ', 100%, 70%, 0.8)';
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'hsla(' + Math.round(f.update()) + ', 100%, 50%, 0.8)';
+        ctx.lineWidth = 1.5;
         for (var e, t = 0; t < E.trails; t++) {
             (e = lines[t]).update();
             e.draw();

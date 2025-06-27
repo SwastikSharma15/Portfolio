@@ -5,33 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cursor Trail Effect | code_wars_official</title>
   <link rel="stylesheet" href="Style/style.css"/>
+  <!-- <link rel="stylesheet" href="new.css"/> -->
 </head>
 <body>
     <canvas id="canvas"></canvas>
-  <nav>
-    <div class="nav-left-side">Logo</div>
-    <div class="nav-right-side">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#aboutme">About Me</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+
+  <nav class="nav-2">
+  <div class="nav-left-side">Logo</div>
+  <div class="nav-right-side">
+    <ul class="nav-links">
+      <li><a class="item" href="#home"><div data-text="Home" class="linktext">Home</div></a></li>
+      <li><a class="item" href="#resume"><div data-text="Resume" class="linktext">Resume</div></a></li>
+      <li><a class="item" href="#projects"><div data-text="Projects" class="linktext">Projects</div></a></li>
+      <li><a class="item" href="#contact"><div data-text="Contact" class="linktext">Contact</div></a></li>
+    </ul>
+  </div>
+</nav>
+
+
 
   <section id="home">
     
     <div class="home-content">
-      <h1>Welcome to My Portfolio</h1>
-      <p>This is the homepage with animated cursor trails.</p>
+      <h1>Swastik Sharma</h1>
+      <h2>Frontend Developer building sleek & responsive UIs.</h2>
+      <div class="location">
+        <img src="https://img.icons8.com/ios-filled/20/000000/marker.png" alt="Location Icon" class="location-icon" />
+        <span>Himachal Pradesh, India</span>
+      </div>
+
+      <p>Writing code that speaks for itself.</p>
     </div>
   </section>
 
   <section id="resume"><h2>Resume</h2></section>
   <section id="projects"><h2>Projects</h2></section>
-  <section id="aboutme"><h2>About Me</h2></section>
   <section id="contact"><h2>Contact</h2></section>
 
   <script src="Script/Cursor/cursorTrail.js"></script>
