@@ -73,3 +73,17 @@
   75%  { background-position: 0px, 50px; }
   100% { background-position: 0px, 50px; }
 }
+
+ /* NIght Mode */
+body.dark .shiny-button {
+  color: #000; /* Text stays black */
+  box-shadow: rgba(255, 255, 255, 0.2) 3px 3px 5px; /* White drop shadow */
+}
+
+body.dark .shiny-button:hover {
+  background-color: #eaeaea;
+  background-image: linear-gradient(to bottom right, #f1f1f1, #cfcfcf),
+                    linear-gradient(125deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 53%);
+  color: #000;
+}
+

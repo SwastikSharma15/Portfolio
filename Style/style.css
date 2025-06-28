@@ -9,6 +9,7 @@ html, body {
   background: #ffffff;
   font-family: sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
@@ -49,6 +50,53 @@ nav {
   font-weight: 500;
   display: flex;
   align-items: center;
+}
+
+.nav-2 {
+  background: #000000;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-2 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  vertical-align: middle;
+}
+
+/* Align dark mode button with navbar items */
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  /* margin-left: 10px; */
+}
+
+.theme-toggle-wrapper .theme-btn {
+  transform: scale(0.8); /* Optional: to better match nav item size */
+  margin-left: 5px;
+}
+
+/* Remove button extra spacing on small screens */
+@media (max-width: 768px) {
+  .theme-toggle-wrapper .theme-btn {
+    transform: scale(0.9);
+    margin-left: 0;
+  }
 }
 
 /* Updated Home Section */
@@ -218,9 +266,10 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1; /* Behind content */
+  z-index: 0; /* Behind content */
   width: 100%;
   height: 100%;
+  background: transparent;
   pointer-events: none;
 }
 
@@ -228,57 +277,17 @@ canvas {
 section {
   height: 100vh;
   /* padding: 50px; */
-  background: #f8f8f8;
+  background: #ffffff;
   color: #111;
+  margin: 0;
+  padding: 0;
 }
-
-.nav-2 {
-  background: #000000;
-  padding: 20px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+#experience,
+#projects,
+#contact {
+  position: relative;
+  z-index: 1
 }
-
-.nav-2 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-links li a {
-  vertical-align: middle;
-}
-
-/* Align dark mode button with navbar items */
-.theme-toggle-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  /* margin-left: 10px; */
-}
-
-.theme-toggle-wrapper .theme-btn {
-  transform: scale(0.8); /* Optional: to better match nav item size */
-  margin-left: 5px;
-}
-
-/* Remove button extra spacing on small screens */
-@media (max-width: 768px) {
-  .theme-toggle-wrapper .theme-btn {
-    transform: scale(0.9);
-    margin-left: 0;
-  }
-}
-
 
 .item {
   position: relative;
