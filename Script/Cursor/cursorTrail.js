@@ -9,15 +9,15 @@ n.prototype = {
         this.offset = e.offset || 0;
         this.frequency = e.frequency || 0.001;
         this.amplitude = e.amplitude || 1;
+        this._value = 0;
     },
     update: function () {
-        return (
-            (this.phase += this.frequency),
-            (e = this.offset + Math.sin(this.phase) * this.amplitude)
-        );
+        this.phase += this.frequency;
+        this._value = this.offset + Math.sin(this.phase) * this.amplitude;
+        return this._value;
     },
     value: function () {
-        return e;
+        return this._value;
     },
 };
 
@@ -178,20 +178,25 @@ const renderCanvas = function () {
 };
 
 window.onload = function () {
-  const homeSection = document.getElementById('home');
   const canvas = document.getElementById('canvas');
-
-  if (!homeSection || !canvas) return;
+  if (!canvas) return;
 
   ctx = canvas.getContext('2d');
   ctx.running = true;
   ctx.frame = 1;
+
   f = new n({
     phase: Math.random() * 2 * Math.PI,
     amplitude: 85,
     frequency: 0.0015,
     offset: 285,
   });
+
+  // Initialize lines
+  lines = [];
+  for (let i = 0; i < E.trails; i++) {
+    lines.push(new Line({ spring: 0.4 + (i / E.trails) * 0.025 }));
+  }
 
   document.addEventListener('mousemove', onMousemove);
   document.addEventListener('touchstart', onMousemove);
@@ -200,3 +205,5 @@ window.onload = function () {
   resizeCanvas();
   render();
 };
+
+

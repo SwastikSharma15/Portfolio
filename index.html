@@ -3,25 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cursor Trail Effect | code_wars_official</title>
+  <title>Swastik Sharma</title>
   <link rel="stylesheet" href="Style/style.css"/>
+  <link rel="stylesheet" href="Style/buttonGroup.css">
+  <link rel="stylesheet" href="Style/darkMode.css"/>
   <!-- <link rel="stylesheet" href="new.css"/> -->
 </head>
 <body>
-    <canvas id="canvas"></canvas>
+  <canvas id="canvas"></canvas>
 
   <nav class="nav-2">
-  <div class="nav-left-side">Logo</div>
-  <div class="nav-right-side">
-    <ul class="nav-links">
-      <li><a class="item" href="#home"><div data-text="Home" class="linktext">Home</div></a></li>
-      <li><a class="item" href="#resume"><div data-text="Resume" class="linktext">Resume</div></a></li>
-      <li><a class="item" href="#projects"><div data-text="Projects" class="linktext">Projects</div></a></li>
-      <li><a class="item" href="#contact"><div data-text="Contact" class="linktext">Contact</div></a></li>
-    </ul>
-  </div>
-</nav>
-
+    <div class="nav-left-side">Logo</div>
+    <div class="nav-right-side">
+      <ul class="nav-links">
+        <li><a class="item" href="#home"><div data-text="Home" class="linktext">Home</div></a></li>
+        <li><a class="item" href="#experience"><div data-text="Experience" class="linktext">Experience</div></a></li>
+        <li><a class="item" href="#projects"><div data-text="Projects" class="linktext">Projects</div></a></li>
+        <li><a class="item" href="#contact"><div data-text="Contact" class="linktext">Contact</div></a></li>
+        <!-- Theme Toggle -->
+        
+        <li class="theme-toggle-wrapper">
+          <button class="theme-btn unicode-version" onclick="toggleButton(this)">
+            <span class="morph-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
   <section id="home">
@@ -35,13 +43,40 @@
       </div>
 
       <p>Writing code that speaks for itself.</p>
+
+      <div class="button-group">
+        <a href="assets/Swastik_Sharma_Resume.pdf" download class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/export-pdf.png" alt="Resume Icon" />
+          Resume
+        </a>
+
+        <a href="https://github.com/SwastikSharma15" target="_blank" class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/github.png" alt="GitHub" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/swastik-sharma-1a748617a/" target="_blank" class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png" alt="LinkedIn" />
+        </a>
+
+        <a href="mailto:yourmail@gmail.com" class="shiny-button" target="_blank">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/gmail-new.png" alt="Gmail Icon" />
+        </a>
+
+        <a href="https://www.youtube.com/@SpeedX_/featured" target="_blank" class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/youtube-play.png" alt="YouTube" />
+        </a>
+      </div>
+
     </div>
+
   </section>
 
-  <section id="resume"><h2>Resume</h2></section>
+  <section id="experience"><h2>Experience</h2></section>
   <section id="projects"><h2>Projects</h2></section>
   <section id="contact"><h2>Contact</h2></section>
 
+  <script src="script.js"></script>
   <script src="Script/Cursor/cursorTrail.js"></script>
+  
 </body>
 </html>

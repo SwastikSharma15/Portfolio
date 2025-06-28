@@ -1,0 +1,75 @@
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.shiny-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #000000;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background-color: #333;
+  background-image: linear-gradient(to bottom right, #f1f1f1, #bebebe),
+                    linear-gradient(125deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 53%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100%, 200%;
+  background-position: 0px, -250px;
+  animation: 4s border-glint linear infinite;
+  box-shadow: rgba(0,0,0,0.2) 3px 3px 5px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.shiny-button img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1); /* makes icons white */
+}
+
+.shiny-button:hover {
+  background-color: #d8d8d8; /* <- lighter color on hover */
+  background-image: linear-gradient(to bottom right, #dcdcdc, #c5c5c5),
+                    linear-gradient(125deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 53%);
+  color: #000;
+}
+
+/* 🔥 Icon filter fix */
+.shiny-button:hover img {
+  filter: invert(1); /* Makes black icons white on hover */
+}
+
+
+.shiny-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(125deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 52%);
+  animation: glint 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glint {
+  0% { left: -120%; }
+  8% { left: 50%; }
+  100% { left: 50%; }
+}
+
+@keyframes border-glint {
+  0%   { background-position: 0px, -250px; }
+  25%  { background-position: 0px, -200px; }
+  75%  { background-position: 0px, 50px; }
+  100% { background-position: 0px, 50px; }
+}
