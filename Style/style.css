@@ -7,10 +7,21 @@
 html, body {
   height: 100%;
   background: #ffffff;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+/* For modern browsers */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
@@ -275,7 +286,7 @@ canvas {
 
 /* Other sections for scrolling */
 section {
-  height: 100vh;
+  min-height: 100vh;
   /* padding: 50px; */
   background: #ffffff;
   color: #111;

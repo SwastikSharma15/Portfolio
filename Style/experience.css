@@ -1,44 +1,48 @@
-html {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    /* Set a consistent base font size */
+    font-size: 16px;
     --bgColorMenu: #1d1d27;
     --bgColorExperience: #ff8c00;
     --bgColorEducation: #4343f5;
     --duration: 0.7s;
 }
 
-html *,
-html *::before,
-html *::after {
-    box-sizing: inherit;
-}
-
 body {
-    margin: 0;
-    min-height: 100vh;
-    background: transparent;
-    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 2rem 0;
+    background: #ffffff;
+    /* Explicitly set base font size */
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
+/* Container styles */
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 3rem 1rem;
 }
 
+/* Menu styles */
 .menu {
     margin: 0 auto;
     display: flex;
     width: 20em;
-    font-size: 1.2em;
-    padding: 0 2em;
+    /* Use rem instead of em for more predictable sizing */
+    font-size: 1.2rem;
+    padding: 0 2rem;
     position: relative;
     align-items: center;
     justify-content: center;
     background-color: var(--bgColorMenu);
     border-radius: 2rem;
     margin-bottom: 2rem;
+    z-index: 5;
 }
 
 .menu__item {
@@ -56,7 +60,8 @@ body {
     transition: transform var(--duration);
     color: white;
     font-weight: 500;
-    font-size: 0.85em;
+    /* Use rem for consistent sizing */
+    font-size: 0.85rem;
 }
 
 .menu__item::before {
@@ -98,11 +103,7 @@ body {
     transition: transform var(--duration);
 }
 
-.svg-container {
-    width: 0;
-    height: 0;
-}
-
+/* Content area styles */
 .content-area {
     background: white;
     border-radius: 1rem;
@@ -114,6 +115,8 @@ body {
 .dropdown-content {
     display: none;
     padding: 2rem;
+    /* Explicitly set font size to prevent inheritance issues */
+    font-size: 1rem;
 }
 
 .dropdown-content.active {
@@ -126,6 +129,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Content header styles */
 .content-header {
     display: flex;
     align-items: center;
@@ -144,6 +148,8 @@ body {
     margin-right: 1rem;
     color: white;
     font-weight: bold;
+    /* Explicit font size */
+    font-size: 1.2rem;
 }
 
 .experience-header .content-icon {
@@ -155,11 +161,14 @@ body {
 }
 
 .content-title {
+    /* Use rem for consistent sizing */
     font-size: 1.5rem;
     font-weight: 600;
     color: #333;
+    margin: 0;
 }
 
+/* Timeline styles */
 .timeline-item {
     display: flex;
     margin-bottom: 2rem;
@@ -189,6 +198,7 @@ body {
     justify-content: center;
     margin-right: 1.5rem;
     flex-shrink: 0;
+    /* Explicit font size */
     font-size: 0.8rem;
     color: white;
     font-weight: bold;
@@ -208,11 +218,13 @@ body {
 
 .timeline-date {
     color: #666;
+    /* Use rem for consistent sizing */
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
 .timeline-title {
+    /* Use rem for consistent sizing */
     font-size: 1.2rem;
     font-weight: 600;
     color: #333;
@@ -221,6 +233,7 @@ body {
 
 .timeline-company {
     color: #666;
+    /* Use rem for consistent sizing */
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -228,19 +241,95 @@ body {
 .timeline-description {
     color: #555;
     line-height: 1.6;
+    /* Use rem for consistent sizing */
+    font-size: 1rem;
 }
 
+/* SVG container */
+.svg-container {
+    width: 0;
+    height: 0;
+}
+
+/* Responsive styles */
 @media screen and (max-width: 50em) {
     .menu {
-        font-size: 1em;
+        font-size: 1rem;
         width: 18em;
     }
     
     .container {
-        padding: 0 0.5rem;
+        padding: 2rem 0.5rem;
     }
     
     .dropdown-content {
         padding: 1rem;
     }
+
+    .content-title {
+        font-size: 1.3rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Font inheritance fixes */
+.container * {
+    font-size: inherit !important;
+}
+
+.timeline-date {
+    font-size: 0.85rem !important;
+    font-weight: 400 !important;
+}
+
+.timeline-company {
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+}
+
+.timeline-description {
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+}
+
+/* SIMPLE MENU SOLUTION - Remove the weird border element */
+.menu {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    background: #f5f5f5;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.menu__item {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #666;
+}
+
+.menu__item.active {
+    background: #000000;
+    color: white;
+    font-weight: 600;
+}
+
+.menu__item:hover:not(.active) {
+    background: rgba(255, 107, 53, 0.1);
+    color: #ff6b35;
+}
+
+/* Hide the problematic border elements */
+.menu__pill-background,
+.menu__border {
+    display: none !important;
 }
