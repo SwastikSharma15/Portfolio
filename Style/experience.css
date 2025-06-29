@@ -23,16 +23,16 @@ body {
 
 /* Container styles */
 .container {
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 3rem 1rem;
+    padding: 2rem 0.5rem;
 }
 
 /* Menu styles */
 .menu {
     margin: 0 auto;
     display: flex;
-    width: 20em;
+    width: 30em;
     /* Use rem instead of em for more predictable sizing */
     font-size: 1.2rem;
     padding: 0 2rem;

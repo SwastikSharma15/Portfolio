@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="Style/night_Home.css"/>
   <link rel="stylesheet" href="Style/experience.css"/>
   <link rel="stylesheet" href="Style/night_Exp.css"/>
+  <link rel="stylesheet" href="tech-stack-animation/techStack.css"/>
 </head>
 <body>
   <canvas id="canvas"></canvas>
@@ -73,7 +74,7 @@
 
   </section>
 
-  <section id="experience"><h2>
+  <section id="experience">
     
     <div class="container">
         <nav class="menu">
@@ -197,13 +198,44 @@
         </svg>
     </div>
     
-  </h2></section>
-  <section id="projects"><h2>Projects</h2></section>
-  <section id="contact"><h2>Contact</h2></section>
+  </section>
+
+
+  <section id="projects">
+    
+    <div class="tech-stack-section">
+      <div class="tech-wrapper">
+        <!-- Container containing animation -->
+        <div class="tech-overflow-box">
+          <div class="tech-animation-box">
+            <!-- Tech Stack title -->
+            <h1>Tech Stack</h1>
+            <!-- Displaying the name of current technology -->
+            <h1 id="techName"></h1>
+          </div>
+        </div>
+        <!-- Container with technology icons -->
+        <div class="tech-flexbox">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" name="HTML5" alt="HTML5" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" name="CSS3" alt="CSS3" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" name="JavaScript" alt="JavaScript" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" name="Tailwind CSS" alt="Tailwind CSS" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" name="React" alt="React" />
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <section id="contact">Contact</section>
 
   <script src="script.js"></script>
   <script src="Script/Cursor/cursorTrail.js"></script>
   <script src="Script/Main/exp.js"></script>
+  <script src="tech-stack-animation/techStack.js"></script>
   
 </body>
 </html>
