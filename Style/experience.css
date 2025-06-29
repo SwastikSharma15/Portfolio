@@ -62,6 +62,7 @@ body {
     font-weight: 500;
     /* Use rem for consistent sizing */
     font-size: 0.85rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .menu__item::before {
@@ -107,7 +108,7 @@ body {
 .content-area {
     background: white;
     border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     min-height: 400px;
 }
@@ -299,7 +300,7 @@ body {
 /* SIMPLE MENU SOLUTION - Remove the weird border element */
 .menu {
     display: flex;
-    gap: 10px;
+    gap: 2rem;
     position: relative;
     background: #f5f5f5;
     padding: 5px;
@@ -325,7 +326,12 @@ body {
 
 .menu__item:hover:not(.active) {
     background: rgba(255, 107, 53, 0.1);
-    color: #ff6b35;
+    /* color: #ff6b35; */
+    color: var(--bgColorExperience);
+}
+.menu__item:nth-child(2):hover:not(.active) {
+    background: rgba(67, 67, 245, 0.1);
+    color: var(--bgColorEducation);
 }
 
 /* Hide the problematic border elements */

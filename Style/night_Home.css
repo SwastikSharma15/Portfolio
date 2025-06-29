@@ -23,11 +23,11 @@ body.dark section a {
 }
 
 body.dark canvas {
-  background: #111; /* or match your dark background */
+  background: #000000; /* or match your dark background */
 }
 
 body.dark section {
-  background: #1a1a1a;
+  background: #000000;
   color: #ffffff;
 }
 
@@ -53,7 +53,7 @@ body.dark .linktext::before {
 }
 
 body.dark .location {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(244, 244, 244, 0.1);
   color: #f1f1f1;
 }
 
@@ -63,6 +63,9 @@ body.dark .location::before {
 
 body.dark .location::after {
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+body.dark .location-icon {
+  filter: invert(0.8); /* Adjust icon visibility */
 }
 
 body.dark .location:hover .location-icon {
