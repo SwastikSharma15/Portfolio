@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="Style/experience.css"/>
   <link rel="stylesheet" href="Style/night_Exp.css"/>
   <link rel="stylesheet" href="tech-stack-animation/techStack.css"/>
+  <link rel="stylesheet" href="Style/projects.css">
+  <!-- <link rel="stylesheet" href="Style/projectsNight.css"> -->
 </head>
 <body>
   <canvas id="canvas"></canvas>
@@ -221,9 +223,62 @@
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" name="JavaScript" alt="JavaScript" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" name="Tailwind CSS" alt="Tailwind CSS" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" name="React" alt="React" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" name="Python" alt="Python" />
+          <img src="Assets/DR.png" name="DaVinci Resolve (Video Editing)" alt="DaVinci Resolve" />
 
         </div>
       </div>
+    </div>
+
+
+    <div class="projects-container">
+        <h2 class="section-title">Recent projects</h2>
+        
+        <div class="projects-grid">
+            <!-- Project 1: Amazon Clone -->
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder"><img class="project-placeholder-img" src="Assets/Amazon.png" alt="💼"></div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Amazon Clone</h3>
+                    <p class="project-description">A responsive Amazon-inspired website with shopping cart, order placement, real-time tracking, and order history features.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary">Live Demo</a>
+                        <a href="https://github.com/SwastikSharma15/Amazon-with-HTML-CSS-JS/tree/main/javascript-amazon-project-main" class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Portfolio Website -->
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder"><img class="project-placeholder-img" src="Assets/Portfolio.png" alt="🎮"></div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">swastikspeedx.dev</h3>
+                    <p class="project-description">A responsive developer portfolio featuring interactive UI, dark mode, and project highlights.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary">Visit Site</a>
+                        <a href="https://github.com/SwastikSharma15/My-Site" class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="projects.html" class="more-projects">
+            More projects <span class="arrow">→</span>
+        </a>
     </div>
 
   </section>
@@ -236,6 +291,7 @@
   <script src="Script/Cursor/cursorTrail.js"></script>
   <script src="Script/Main/exp.js"></script>
   <script src="tech-stack-animation/techStack.js"></script>
+  <script src="Script/Main/projects.js"></script>
   
 </body>
 </html>
