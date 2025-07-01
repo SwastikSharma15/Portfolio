@@ -182,7 +182,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    padding: 0.8rem 0;
+    padding-bottom: 2rem;
 }
 
 .more-projects:hover {

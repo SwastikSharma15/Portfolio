@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="Style/night_Exp.css"/>
   <link rel="stylesheet" href="tech-stack-animation/techStack.css"/>
   <link rel="stylesheet" href="Style/projects.css">
-  <!-- <link rel="stylesheet" href="Style/projectsNight.css"> -->
+  <link rel="stylesheet" href="Style/projectsVideo.css">
+  <link rel="stylesheet" href="Falling Stars Game/stars.css">
 </head>
 <body>
   <canvas id="canvas"></canvas>
@@ -220,8 +221,8 @@
         <div class="tech-flexbox">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" name="HTML5" alt="HTML5" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" name="CSS3" alt="CSS3" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" name="JavaScript" alt="JavaScript" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" name="Tailwind CSS" alt="Tailwind CSS" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" name="JavaScript" alt="JavaScript" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" name="React" alt="React" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" name="Python" alt="Python" />
           <img src="Assets/DR.png" name="DaVinci Resolve (Video Editing)" alt="DaVinci Resolve" />
@@ -281,6 +282,75 @@
         </a>
     </div>
 
+    <div class="videos-container">
+        <h2 class="section-title">Featured Videos</h2>
+        
+        <div class="videos-grid">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-preview">
+                    <video controls width="100%">
+                      <source src="Assets/eyes.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-preview">
+                    <video controls width="100%">
+                      <source src="Assets/VAL.mov" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>           
+            </div>
+        </div>
+
+        <a href="https://www.youtube.com/@SpeedX_/videos" class="more-videos" target="_blank">
+            More videos <span class="arrow">→</span>
+        </a>
+    </div>
+
+    <div class="fun-area-container">
+        <h2 class="section-title">Fun Area</h2>
+        
+        <div class="star-game-wrapper">
+            <div class="star-game-container">
+                <!-- Start Screen -->
+                <div class="star-start-screen" id="startScreen">
+                    <h1 class="star-game-title">⭐ Catch the Falling Stars ⭐</h1>
+                    <input type="text" class="star-name-input" id="playerName" placeholder="Enter your name" maxlength="20">
+                    <div class="star-instructions">
+                        <p><strong>How to Play:</strong></p>
+                        <p>Use <strong>A & D</strong> keys or <strong>← & →</strong> arrow keys to move your basket</p>
+                        <p>Catch as many falling stars as you can in 45 seconds!</p>
+                    </div>
+                    <button class="star-start-btn" id="startBtn">Let's Go!</button>
+                </div>
+
+                <!-- Game HUD -->
+                <div class="star-hud" id="gameHud" style="display: none;">
+                    <div>Score: <span id="currentScore">0</span></div>
+                    <div>High Score: <span id="highScore">0</span></div>
+                </div>
+
+                <div class="star-timer" id="gameTimer" style="display: none;">45</div>
+
+                <!-- Game Canvas -->
+                <canvas class="star-game-canvas" id="gameCanvas" style="display: none;"></canvas>
+
+                <!-- Game Over Screen -->
+                <div class="star-game-over" id="gameOverScreen">
+                    <h2>Game Over!</h2>
+                    <div class="star-final-score" id="finalScore">Final Score: 0</div>
+                    <div id="playerGreeting"></div>
+                    <button class="star-play-again-btn" id="playAgainBtn">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
   </section>
 
 
@@ -292,6 +362,7 @@
   <script src="Script/Main/exp.js"></script>
   <script src="tech-stack-animation/techStack.js"></script>
   <script src="Script/Main/projects.js"></script>
+  <script src="Falling Stars Game/stars.js"></script>
   
 </body>
 </html>
