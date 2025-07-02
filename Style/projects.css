@@ -5,6 +5,10 @@ body {
     min-height: 100vh;
 }
 
+#projects-main .section-title {
+    padding-top: 2rem;
+}
+
 .projects-container {
     max-width: 600px;
     margin: 0 auto;
