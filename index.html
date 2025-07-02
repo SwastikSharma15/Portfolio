@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="Style/projects.css">
   <link rel="stylesheet" href="Style/projectsVideo.css">
   <link rel="stylesheet" href="Falling Stars Game/stars.css">
+  <link rel="stylesheet" href="Style/contactMe.css">
 </head>
 <body>
   <canvas id="canvas"></canvas>
@@ -355,7 +356,62 @@
 
 
 
-  <section id="contact">Contact</section>
+  <section id="contact">
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-subtitle">
+                Have a project in mind or just want to chat? I'd love to hear from you. 
+                Send me a message and I'll get back to you as soon as possible.
+            </p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="Enter your email address"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        class="form-textarea" 
+                        placeholder="Tell me about your project or just say hello..."
+                        required
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Send Message
+                </button>
+                
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+  </section>
 
   <script src="script.js"></script>
   <script src="Script/Cursor/cursorTrail.js"></script>

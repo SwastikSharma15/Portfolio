@@ -17,8 +17,13 @@ body.dark .menu__item.active {
 }
 
 body.dark .menu__item:hover:not(.active) {
-    background: rgba(255, 107, 53, 0.2);
-    color: #ff8c00;
+    background: rgba(255, 107, 53, 0.1);
+    /* color: #ff6b35; */
+    color: var(--bgColorExperience);
+}
+body.dark .menu__item:nth-child(2):hover:not(.active) {
+    background: rgba(67, 67, 245, 0.1);
+    color: var(--bgColorEducation);
 }
 
 /* Content area dark mode */

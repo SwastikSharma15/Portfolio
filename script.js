@@ -67,3 +67,76 @@ function checkSection() {
 window.addEventListener('scroll', checkSection);
 window.addEventListener('load', checkSection);
 checkSection(); // Initial check
+
+
+// Web3Forms Contact me
+
+
+const accessKey1 = '18536a8d-1f17-4f02-97b1-e5cf2b45e4fb'; // sharmaspeedx29@gmail.com
+const accessKey2 = '3632924f-f67c-4571-883a-ae15e8c4ed16'; // swastik15.sharma.work@gmail.com
+       
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+   e.preventDefault();
+   
+   const form = this;
+   const submitBtn = document.getElementById('submitBtn');
+   const formMessage = document.getElementById('formMessage');
+   
+   // Disable submit button and show loading state
+   submitBtn.disabled = true;
+   submitBtn.textContent = 'Sending...';
+   formMessage.classList.remove('show');
+   
+   try {
+       // Create form data for first email
+       const formData1 = new FormData(form);
+       formData1.append('access_key', accessKey1);
+       
+       // Create form data for second email
+       const formData2 = new FormData(form);
+       formData2.append('access_key', accessKey2);
+       
+       // Send to both emails simultaneously
+       const [response1, response2] = await Promise.all([
+           fetch('https://api.web3forms.com/submit', {
+               method: 'POST',
+               body: formData1
+           }),
+           fetch('https://api.web3forms.com/submit', {
+               method: 'POST',
+               body: formData2
+           })
+       ]);
+       
+       const data1 = await response1.json();
+       const data2 = await response2.json();
+       
+       if (data1.success && data2.success) {
+           // Both emails sent successfully
+           formMessage.textContent = 'Thank you! Your message has been sent successfully to both emails.';
+           formMessage.className = 'form-message success show';
+           form.reset(); // Clear the form
+       } else if (data1.success || data2.success) {
+           // Only one email sent successfully
+           formMessage.textContent = 'Message sent, but there was an issue with one of the emails.';
+           formMessage.className = 'form-message success show';
+           form.reset();
+       } else {
+           throw new Error('Failed to send to both emails');
+       }
+   } catch (error) {
+       // Error - show error message
+       formMessage.textContent = 'Sorry, there was an error sending your message. Please try again.';
+       formMessage.className = 'form-message error show';
+       console.error('Form submission error:', error);
+   } finally {
+       // Re-enable submit button
+       submitBtn.disabled = false;
+       submitBtn.textContent = 'Send Message';
+       
+       // Hide message after 5 seconds
+       setTimeout(() => {
+           formMessage.classList.remove('show');
+       }, 5000);
+   }
+});
