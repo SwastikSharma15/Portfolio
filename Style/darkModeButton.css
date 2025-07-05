@@ -20,7 +20,7 @@ body {
    position: relative;
    width: 45px;
    height: 45px;
-   border: 2px solid #ddd;
+   border: 2px solid #000000;
    border-radius: 50%;
    cursor: pointer;
    overflow: hidden;
@@ -35,7 +35,7 @@ body {
 .theme-btn:hover {
    transform: scale(1.025);
    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-   border-color: #bbb;
+   border-color: #7a7a7a;
 }
 
 .theme-btn:active {
