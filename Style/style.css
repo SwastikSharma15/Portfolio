@@ -98,7 +98,7 @@ nav {
 }
 
 .theme-toggle-wrapper .theme-btn {
-  transform: scale(0.8); /* Optional: to better match nav item size */
+  transform: scale(0.7); /* Optional: to better match nav item size */
   margin-left: 5px;
 }
 
@@ -112,10 +112,11 @@ nav {
 
 /* Updated Home Section */
 #home {
-  height: 100svh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   background: transparent;
+  padding-bottom: 2rem;
 }
 
 .home-content {
@@ -286,7 +287,7 @@ canvas {
 
 /* Other sections for scrolling */
 section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* padding: 50px; */
   background: #ffffff;
   color: #111;

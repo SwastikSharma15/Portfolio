@@ -1,4 +1,3 @@
-// Created by DataSage-Parth
 function n(e) {
     this.init(e || {});
 }
@@ -81,6 +80,7 @@ Line.prototype = {
 function onMousemove(e) {
     pos.x = e.clientX;
     pos.y = e.clientY;
+    
     function o() {
         lines = [];
         for (var e = 0; e < E.trails; e++)
@@ -116,18 +116,64 @@ function render() {
         ctx.globalCompositeOperation = 'lighter';
         ctx.strokeStyle = 'hsla(' + Math.round(f.update()) + ', 100%, 50%, 0.8)';
         ctx.lineWidth = 1.5;
+        
         for (var e, t = 0; t < E.trails; t++) {
             (e = lines[t]).update();
             e.draw();
         }
+        
         ctx.frame++;
         window.requestAnimationFrame(render);
     }
 }
 
+function getOptimalSettings() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const pixelCount = width * height;
+    
+    // Base settings for 960 x 540
+    const basePixels = 960 * 540;
+    const pixelRatio = pixelCount / basePixels;
+    
+    let settings = {
+        trails: 20,
+        size: 50
+    };
+    
+    // Reduce trails for larger screens to improve performance
+    if (pixelRatio > 2) { // Much larger than 1080p (like 4K)
+        settings.trails = 8;
+        settings.size = 25;
+    } else if (pixelRatio > 1.5) { // Larger than 1080p
+        settings.trails = 12;
+        settings.size = 35;
+    } else if (pixelRatio > 1.2) {
+        settings.trails = 16;
+        settings.size = 45;
+    }
+    
+    return settings;
+}
+
 function resizeCanvas() {
+    const optimalSettings = getOptimalSettings();
+    
+    // Update configuration
+    E.trails = optimalSettings.trails;
+    E.size = optimalSettings.size;
+    
+    // Set canvas size to match window size
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
+    
+    // Reinitialize lines with new settings if they exist
+    if (lines.length > 0) {
+        lines = [];
+        for (let i = 0; i < E.trails; i++) {
+            lines.push(new Line({ spring: 0.4 + (i / E.trails) * 0.025 }));
+        }
+    }
 }
 
 var ctx,
@@ -136,12 +182,11 @@ var ctx,
     pos = {},
     lines = [],
     E = {
-        debug: true,
         friction: 0.5,
         trails: 20,
         size: 50,
         dampening: 0.25,
-        tension: 0.98,
+        tension: 0.98
     };
 
 function Node() {
@@ -151,59 +196,48 @@ function Node() {
     this.vx = 0;
 }
 
-const renderCanvas = function () {
-    ctx = document.getElementById('canvas').getContext('2d');
+window.onload = function () {
+    const canvas = document.getElementById('canvas');
+    if (!canvas) return;
+
+    ctx = canvas.getContext('2d');
     ctx.running = true;
     ctx.frame = 1;
+
     f = new n({
         phase: Math.random() * 2 * Math.PI,
         amplitude: 85,
         frequency: 0.0015,
         offset: 285,
     });
+
+    // Set initial position to center
+    pos.x = window.innerWidth / 2;
+    pos.y = window.innerHeight / 2;
+
+    // Initialize with optimal settings
+    resizeCanvas();
+
+    // Initialize lines
+    lines = [];
+    for (let i = 0; i < E.trails; i++) {
+        lines.push(new Line({ spring: 0.4 + (i / E.trails) * 0.025 }));
+    }
+
     document.addEventListener('mousemove', onMousemove);
     document.addEventListener('touchstart', onMousemove);
-    document.body.addEventListener('orientationchange', resizeCanvas);
     window.addEventListener('resize', resizeCanvas);
+    
     window.addEventListener('focus', () => {
         if (!ctx.running) {
             ctx.running = true;
             render();
         }
     });
+    
     window.addEventListener('blur', () => {
-        ctx.running = true;
+        ctx.running = false;
     });
-    resizeCanvas();
+
+    render();
 };
-
-window.onload = function () {
-  const canvas = document.getElementById('canvas');
-  if (!canvas) return;
-
-  ctx = canvas.getContext('2d');
-  ctx.running = true;
-  ctx.frame = 1;
-
-  f = new n({
-    phase: Math.random() * 2 * Math.PI,
-    amplitude: 85,
-    frequency: 0.0015,
-    offset: 285,
-  });
-
-  // Initialize lines
-  lines = [];
-  for (let i = 0; i < E.trails; i++) {
-    lines.push(new Line({ spring: 0.4 + (i / E.trails) * 0.025 }));
-  }
-
-  document.addEventListener('mousemove', onMousemove);
-  document.addEventListener('touchstart', onMousemove);
-  window.addEventListener('resize', resizeCanvas);
-
-  resizeCanvas();
-  render();
-};
-
-
