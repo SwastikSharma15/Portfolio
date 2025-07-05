@@ -349,7 +349,7 @@ section {
 
 /* Default: light mode (white icon stays white) */
 body.light .location-icon {
-  filter: invert(1); /* No change */
+  filter: invert(0); /* No change */
 }
 
 /* Dark mode: invert to black or tint */

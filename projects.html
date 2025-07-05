@@ -9,8 +9,48 @@
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="Style/night_Home.css">
     <link rel="stylesheet" href="Style/projectsNight.css">
+    <link rel="stylesheet" href="Style/buttonGroup.css">
+    <link rel="stylesheet" href="Style/darkModeButton.css">    
+    <link rel="stylesheet" href="Style/musicButton.css">
+
 </head>
 <body>
+
+    <nav class="nav-2">
+        <div class="nav-left-side"><a class="item" href="index.html#home"><div data-text="Portfolio" class="linktext">Portfolio</div></a></div>
+            <div class="nav-right-side">
+            <ul class="nav-links">
+                <li><a class="item" href="index.html#home"><div data-text="Home" class="linktext">Home</div></a></li>
+                <li><a class="item" href="index.html#experience"><div data-text="Experience" class="linktext">Experience</div></a></li>
+                <li><a class="item" href="index.html#projects"><div data-text="Projects" class="linktext">Projects</div></a></li>
+                <li><a class="item" href="index.html#contact"><div data-text="Contact" class="linktext">Contact</div></a></li>
+                <!-- Theme Toggle -->
+                
+                <li class="theme-toggle-wrapper">
+                <button class="theme-btn unicode-version" onclick="toggleButton(this)">
+                    <span class="morph-icon"></span>
+                </button>
+                </li>
+
+
+                <li class="play-button-demo">
+                    <div class="play-button-widget">
+                        <div class="container play-button-container">
+                            <label>
+                                <input type="checkbox" class="play-btn animated-play-btn" />
+                                <div class="play-icon animated-play-icon"></div>
+                                <div class="pause-icon animated-pause-icon"></div>
+                                <input type="range" class="seek-slider" min="0" value="0" step="0.1" />
+                                <audio id="siteAudio" src="Assets/City Ruins - Rays of Light (NieR_Automata Original Soundtrack)Audio.mp3" preload="auto" loop></audio>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul> 
+        </div>
+    </nav>
+
+
     <div class="projects-container" id="projects-main">  <!-- Dont change this div else add this id="projects-main" -->
 
         <h2 class="section-title">Recent projects</h2>
@@ -30,7 +70,7 @@
                         <span class="project-tag">JavaScript</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" target="_blank" class="project-link primary">Live Demo</a>
+                        <a href="https://swastiksharma15.github.io/Amazon-with-HTML-CSS-JS/" target="_blank" class="project-link primary">Live Demo</a>
                         <a href="https://github.com/SwastikSharma15/Amazon-with-HTML-CSS-JS/tree/main/javascript-amazon-project-main" class="project-link secondary" target="_blank">GitHub</a>
                     </div>
                 </div>
