@@ -31,11 +31,7 @@ body.dark section {
   color: #ffffff;
 }
 
-body.dark .shiny-button {
-  background-color: #333;
-  /* color: white; */
-  border: 1px solid white;
-}
+/* Button styling moved to buttonGroup.css for better organization */
 
 body.dark .theme-btn {
   background: #2c2c2c;
