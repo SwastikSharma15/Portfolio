@@ -5,13 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar-glass');
     const mainNav = document.querySelector('.nav-2');
     
-    console.log('Nav elements found:', {
-        navLinks: navLinks.length,
-        animation: !!animation,
-        navbar: !!navbar,
-        mainNav: !!mainNav
-    });
-    
     if (!navLinks.length || !animation || !navbar) return;
     
     let currentSection = 'home';
@@ -56,23 +49,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle navigation link clicks
     function handleNavClick(e) {
-        e.preventDefault();
-        
         const section = this.getAttribute('data-section');
         if (!section) return;
         
-        currentSection = section;
-        
-        // Update animation position
-        updateAnimationPosition(section);
-        
-        // Smooth scroll to section
+        // Check if target section exists on current page
         const targetElement = document.getElementById(section);
         if (targetElement) {
+            // Section exists on current page - prevent default and scroll
+            e.preventDefault();
+            currentSection = section;
+            
+            // Update animation position
+            updateAnimationPosition(section);
+            
+            // Smooth scroll to section
             targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
+        } else {
+            // Section doesn't exist - allow default link behavior to navigate to href
+            // Don't prevent default, let the browser follow the href attribute
         }
     }
     
@@ -101,21 +98,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active section based on scroll position
     function updateActiveSection() {
         const sections = ['home', 'experience', 'projects', 'contact'];
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        const scrollPosition = window.scrollY + 100; // Add offset for better detection
         
         let activeSection = 'home';
-        let minDistance = Infinity;
         
         sections.forEach(sectionId => {
             const element = document.getElementById(sectionId);
             if (element) {
                 const rect = element.getBoundingClientRect();
                 const elementTop = window.scrollY + rect.top;
-                const elementCenter = elementTop + element.offsetHeight / 2;
-                const distance = Math.abs(scrollPosition - elementCenter);
+                const elementBottom = elementTop + element.offsetHeight;
                 
-                if (distance < minDistance) {
-                    minDistance = distance;
+                // If scroll position is within this section
+                if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+                    activeSection = sectionId;
+                }
+                // Handle edge case for the last section
+                else if (sectionId === 'contact' && scrollPosition >= elementTop) {
                     activeSection = sectionId;
                 }
             }
@@ -150,3 +149,4 @@ document.addEventListener('DOMContentLoaded', function() {
         updateAnimationPosition(currentSection);
     }, 250));
 });
+

@@ -156,13 +156,17 @@ body.dark .navbar-glass .nav-link-glass[data-section="contact"] {
 /* Responsive design - Hide glass navbar only on mobile/tablet */
 @media (max-width: 768px) {
     .navbar-glass {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
     }
 }
 
 /* Ensure glass navbar is visible on desktop */
 @media (min-width: 769px) {
     .navbar-glass {
-        display: block;
+        display: flex !important; /* Changed from block to flex */
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 }
