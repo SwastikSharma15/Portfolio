@@ -301,11 +301,11 @@ section {
   z-index: 1
 }
 
+/* Portfolio link animation styles */
 .item {
   position: relative;
   display: inline-block;
   height: 35px;
-  /* padding-top: 15px; */
   background: transparent;
   text-decoration: none;
   transition: 0.3s ease-in-out;
@@ -321,7 +321,6 @@ section {
   text-transform: uppercase;
   transition: 0.3s ease-in-out;
   transition-delay: 0s;
-  
 }
 
 .linktext::before {

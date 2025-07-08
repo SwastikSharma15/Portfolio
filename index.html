@@ -19,51 +19,59 @@
   <link rel="stylesheet" href="Style/mobileUI.css">
   <link rel="stylesheet" href="Style/fadeScroll.css">
   <link rel="stylesheet" href="Style/mediaQuery.css">
+  <link rel="stylesheet" href="Style/navBar.css">
 </head>
 <body>
   <canvas id="canvas"></canvas>
 
+  <!-- Main navigation bar -->
   <nav class="nav-2">
-    <div class="nav-left-side"><a class="item" href="index.html#home"><div data-text="Portfolio" class="linktext">Portfolio</div></a></div>
-        <div class="nav-right-side">
-        <ul class="nav-links">
-            <li><a class="item" href="#home"><div data-text="Home" class="linktext">Home</div></a></li>
-            <li><a class="item" href="#experience"><div data-text="Experience" class="linktext">Experience</div></a></li>
-            <li><a class="item" href="#projects"><div data-text="Projects" class="linktext">Projects</div></a></li>
-            <li><a class="item" href="#contact"><div data-text="Contact" class="linktext">Contact</div></a></li>
-            <!-- Theme Toggle -->
+    <!-- Left side: Portfolio link -->
+    <div class="nav-left-side">
+      <a class="item" href="index.html#home">
+        <div data-text="Portfolio" class="linktext">Portfolio</div>
+      </a>
+    </div>
 
-        </ul>
+    <!-- Center: Glassmorphism Navigation -->
+    <div class="navbar-glass">
+      <a href="#home" class="nav-link-glass" data-section="home">Home</a>
+      <a href="#experience" class="nav-link-glass" data-section="experience">Experience</a>
+      <a href="#projects" class="nav-link-glass" data-section="projects">Projects</a>
+      <a href="#contact" class="nav-link-glass" data-section="contact">Contact</a>
+      <div class="nav-animation start-home"></div>
+    </div>
 
-        <!-- Controls that stay visible on mobile -->
-        <div class="nav-controls">
-            <div class="theme-toggle-wrapper">
-                <button class="theme-btn unicode-version" onclick="toggleButton(this)">
-                    <span class="morph-icon"></span>
-                </button>
-            </div>
+    <!-- Right side: Controls -->
+    <div class="nav-right-side">
+      <div class="nav-controls">
+          <div class="theme-toggle-wrapper">
+              <button class="theme-btn unicode-version" onclick="toggleButton(this)">
+                  <span class="morph-icon"></span>
+              </button>
+          </div>
 
-            <div class="music-player-widget">
-                <div class="play-button-widget">
-                    <div class="container play-button-container">
-                        <label>
-                            <input type="checkbox" class="play-btn animated-play-btn" />
-                            <div class="play-icon animated-play-icon"></div>
-                            <div class="pause-icon animated-pause-icon"></div>
-                            <input type="range" class="seek-slider" min="0" value="0" step="0.1" />
-                            <audio id="siteAudio" src="Assets/City Ruins - Rays of Light (NieR_Automata Original Soundtrack)Audio.mp3" preload="auto" loop></audio>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Hamburger Menu -->
-        <div class="mobile-hamburger" onclick="toggleMobileNav()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+          <div class="music-player-widget">
+              <div class="play-button-widget">
+                  <div class="container play-button-container">
+                      <label>
+                          <input type="checkbox" class="play-btn animated-play-btn" />
+                          <div class="play-icon animated-play-icon"></div>
+                          <div class="pause-icon animated-pause-icon"></div>
+                          <input type="range" class="seek-slider" min="0" value="0" step="0.1" />
+                          <audio id="siteAudio" src="Assets/City Ruins - Rays of Light (NieR_Automata Original Soundtrack)Audio.mp3" preload="auto" loop></audio>
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Mobile Hamburger Menu -->
+      <div class="mobile-hamburger" onclick="toggleMobileNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
     </div>
   </nav>
 
@@ -409,9 +417,7 @@
 
 
 
-  <section id="contact">
-
-    <section class="contact-section" id="contact">
+  <section class="contact-section" id="contact" style="display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important;">
         <div class="contact-container fade-in-section">
             <h2 class="contact-title">Get In Touch</h2>
             <p class="contact-subtitle">
@@ -464,8 +470,6 @@
         </div>
     </section>
 
-  </section>
-
   <script src="script.js"></script>
   <script src="Script/Cursor/cursorTrail.js"></script>
   <script src="Script/Main/exp.js"></script>
@@ -474,6 +478,8 @@
   <script src="Falling Stars Game/stars.js"></script>
   <script src="Script/Main/fadeScroll.js"></script>
   <script src="Script/Main/mobileUI.js"></script>
+  <script src="Script/Main/navBar.js"></script>
+  <script src="Script/Main/contactFix.js"></script>
   
 </body>
 </html>

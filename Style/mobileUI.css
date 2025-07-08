@@ -164,6 +164,11 @@ body.dark .mobile-nav-link:hover {
     gap: 10px;
   }
   
+  /* Hide glassmorphism navigation on mobile when mobile nav is active */
+  .mobile-nav.active ~ * .navbar-glass {
+    display: none;
+  }
+  
   /* Adjust theme toggle icon size for mobile */
   .unicode-version .morph-icon::before,
   .unicode-version .morph-icon::after {
