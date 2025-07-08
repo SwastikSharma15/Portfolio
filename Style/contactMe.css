@@ -176,7 +176,7 @@
 
 /* Dark Mode Styles */
 body.dark .contact-section {
-    background: transparent;
+    background: #000000;
 }
 
 body.dark .contact-title {

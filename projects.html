@@ -12,28 +12,54 @@
     <link rel="stylesheet" href="Style/buttonGroup.css">
     <link rel="stylesheet" href="Style/darkModeButton.css">    
     <link rel="stylesheet" href="Style/musicButton.css">
+    <link rel="stylesheet" href="Style/navBar.css">
+    <link rel="stylesheet" href="Style/mediaQuery.css">
+    <style>
+        /* Fix button alignment in projects page */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .theme-toggle-wrapper,
+        .music-player-widget {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 
 </head>
 <body>
 
+    <!-- Main navigation bar -->
     <nav class="nav-2">
-        <div class="nav-left-side"><a class="item" href="index.html#home"><div data-text="Portfolio" class="linktext">Portfolio</div></a></div>
-            <div class="nav-right-side">
-            <ul class="nav-links">
-                <li><a class="item" href="index.html#home"><div data-text="Home" class="linktext">Home</div></a></li>
-                <li><a class="item" href="index.html#experience"><div data-text="Experience" class="linktext">Experience</div></a></li>
-                <li><a class="item" href="index.html#projects"><div data-text="Projects" class="linktext">Projects</div></a></li>
-                <li><a class="item" href="index.html#contact"><div data-text="Contact" class="linktext">Contact</div></a></li>
-                <!-- Theme Toggle -->
-                
-                <li class="theme-toggle-wrapper">
-                <button class="theme-btn unicode-version" onclick="toggleButton(this)">
-                    <span class="morph-icon"></span>
-                </button>
-                </li>
+        <!-- Left side: Portfolio link -->
+        <div class="nav-left-side">
+            <a class="item" href="./index.html#home">
+                <div data-text="Portfolio" class="linktext">Portfolio</div>
+            </a>
+        </div>
 
+        <!-- Center: Glassmorphism Navigation -->
+        <div class="navbar-glass">
+            <a href="./index.html#home" class="nav-link-glass" data-section="home">Home</a>
+            <a href="./index.html#experience" class="nav-link-glass" data-section="experience">Experience</a>
+            <a href="./index.html#projects" class="nav-link-glass" data-section="projects">Projects</a>
+            <a href="./index.html#contact" class="nav-link-glass" data-section="contact">Contact</a>
+            <div class="nav-animation start-projects"></div>
+        </div>
 
-                <li class="music-player-widget">
+        <!-- Right side: Controls -->
+        <div class="nav-right-side">
+            <div class="nav-controls">
+                <div class="theme-toggle-wrapper">
+                    <button class="theme-btn unicode-version" onclick="toggleButton(this)">
+                        <span class="morph-icon"></span>
+                    </button>
+                </div>
+
+                <div class="music-player-widget">
                     <div class="play-button-widget">
                         <div class="container play-button-container">
                             <label>
@@ -45,8 +71,8 @@
                             </label>
                         </div>
                     </div>
-                </li>
-            </ul> 
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -120,6 +146,8 @@
         </div>
     </div>
 
+    <script src="Script/Main/navBar.js"></script>
+    <script src="Script/Main/navBarScrollBehavior.js"></script>
     <script src="Script/Main/projects.js"></script>
     <script src="script.js"></script>
 </body>
