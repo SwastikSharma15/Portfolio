@@ -86,6 +86,13 @@ body {
     color: white;
 }
 
+.project-placeholder video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 .project-placeholder-img {
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
