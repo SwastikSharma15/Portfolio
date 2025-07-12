@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="Style/musicButton.css">
     <link rel="stylesheet" href="Style/navBar.css">
     <link rel="stylesheet" href="Style/mediaQuery.css">
+    <link rel="stylesheet" href="Style/mobileUI.css">
     <style>
         /* Fix button alignment in projects page */
         .nav-controls {
@@ -73,8 +74,33 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Mobile Hamburger Menu -->
+            <div class="mobile-hamburger" onclick="toggleMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="./index.html#home" class="mobile-nav-link" onclick="closeMobileNav()">Home</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="./index.html#experience" class="mobile-nav-link" onclick="closeMobileNav()">Experience</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="./index.html#projects" class="mobile-nav-link" onclick="closeMobileNav()">Projects</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="./index.html#contact" class="mobile-nav-link" onclick="closeMobileNav()">Contact</a>
+            </li>
+        </ul>
+    </div>
 
 
     <div class="projects-container" id="projects-main">  <!-- Dont change this div else add this id="projects-main" -->
@@ -194,6 +220,7 @@
     <script src="Script/Main/navBar.js"></script>
     <script src="Script/Main/navBarScrollBehavior.js"></script>
     <script src="Script/Main/projects.js"></script>
+    <script src="Script/Main/mobileUI.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
