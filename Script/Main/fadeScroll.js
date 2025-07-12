@@ -59,7 +59,7 @@ const observeElements = () => {
     observer.observe(element);
   });
 
-  console.log(`Observing ${elementsToAnimate.length} elements for scroll animations`);
+  /* console.log(`Observing ${elementsToAnimate.length} elements for scroll animations`); */
 };
 
 // Function to handle tech stack icons separately for staggered effect
@@ -236,7 +236,7 @@ const initScrollAnimations = () => {
   observeTimelineItems();
   observeFormElements();
 
-  console.log('Scroll animations initialized successfully');
+  /* console.log('Scroll animations initialized successfully'); */
 };
 
 // Handle page visibility change (when user switches tabs)

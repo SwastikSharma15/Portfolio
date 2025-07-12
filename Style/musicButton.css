@@ -43,8 +43,8 @@ body.music-player-widget.dark {
 .play-btn.animated-play-btn::before {
     content: "";
     position: absolute;
-    width: 93%;
-    height: 93%;
+    width: 87.5%;
+    height: 87.5%;
     background-color: #fff;
     border-radius: 50%;
     left: 50%;

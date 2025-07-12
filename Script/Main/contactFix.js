@@ -3,20 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Find all contact navigation links
     const contactLinks = document.querySelectorAll('a[href="#contact"], a[data-section="contact"]');
     
-    console.log('Contact links found:', contactLinks.length);
+    /* console.log('Contact links found:', contactLinks.length); */
     
     // Add click handlers to all contact links
     contactLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            console.log('Contact link clicked');
+            /* console.log('Contact link clicked'); */
             
             // Find the contact section
             const contactSection = document.getElementById('contact');
             
             if (contactSection) {
-                console.log('Contact section found, scrolling...');
+                /* console.log('Contact section found, scrolling...'); */
                 
                 // Scroll to contact section
                 contactSection.scrollIntoView({
@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if contact section exists and log its properties
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-        console.log('Contact section exists');
+        /* console.log('Contact section exists');
         console.log('Contact section visibility:', window.getComputedStyle(contactSection).visibility);
         console.log('Contact section display:', window.getComputedStyle(contactSection).display);
-        console.log('Contact section height:', contactSection.offsetHeight);
+        console.log('Contact section height:', contactSection.offsetHeight); */
     } else {
         console.error('Contact section not found in DOM');
     }
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check for contact form
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        console.log('Contact form found and ready');
+        /* console.log('Contact form found and ready'); */
     } else {
         console.error('Contact form not found');
     }
