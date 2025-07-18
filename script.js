@@ -145,15 +145,6 @@ if (contactForm) {
     });
 }
 
-// Download of resume
-
-function downloadResume(e) {
-  e.preventDefault();
-  const link = document.createElement('a');
-  link.href = 'assets/Resume_Swastik_sharma.pdf';
-  link.download = 'Resume_Swastik_Sharma.pdf';
-  link.click();
-}
 
 // Audio Nier
 
