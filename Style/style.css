@@ -355,3 +355,8 @@ body.light .location-icon {
 body.dark .location-icon {
   filter: invert(0); /* Makes white -> black */
 }
+
+::selection {
+  background: yellow;
+  color: black; /* Optional: change text color if needed */
+}
