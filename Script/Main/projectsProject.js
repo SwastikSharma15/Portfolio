@@ -1,14 +1,36 @@
 // Projects data array
 const projectsData = [
     {
+        title: "Movie Plex",
+        description: "Built a responsive movie browsing app with React and Vite, featuring real-time search via external APIs and optimized performance using hooks and reusable components.",
+        image: "Assets/movieplex.png",
+        imageType: "img", // "img" or "video"
+        tags: ["HTML", "CSS", "React JS"],
+        links: {
+            demo: "https://movieplexapp.vercel.app/",
+            github: "https://github.com/SwastikSharma15/Movie-React-App"
+        }
+    },
+    {
+        title: "TidyTasks",
+        description: "Built a responsive and interactive modern ToDo List app using React and useState, with dynamic task management and real-time UI updates for a seamless experience.",
+        image: "Assets/",
+        imageType: "img",
+        tags: ["HTML", "CSS", "React JS"],
+        links: {
+            demo: "https://todosreactapp.vercel.app/",
+            github: "https://github.com/SwastikSharma15/ToDo_s-List-in-React"
+        }
+    },
+    {
         title: "Amazon Clone",
         description: "A responsive Amazon-inspired website with shopping cart, order placement, real-time tracking, and order history features.",
         image: "Assets/Amazon.png",
-        imageType: "img", // "img" or "video"
+        imageType: "img",
         tags: ["HTML", "CSS", "JavaScript"],
         links: {
             demo: "https://swastiksharma15.github.io/Amazon-with-HTML-CSS-JS/",
-            github: "https://github.com/SwastikSharma15/Amazon-with-HTML-CSS-JS/tree/main/javascript-amazon-project-main"
+            github: "https://github.com/SwastikSharma15/Amazon-with-HTML-CSS-JS"
         }
     },
     {
