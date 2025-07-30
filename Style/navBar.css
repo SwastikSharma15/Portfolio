@@ -83,6 +83,13 @@
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar-glass:hover .nav-animation {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Individual link widths for your sections */
