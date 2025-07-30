@@ -5,6 +5,7 @@ function initializeStarGame() {
         score: 0,
         timeLeft: 45,
         playerName: '',
+        deviceType: '', // 'desktop' or 'mobile'
         basket: { x: 275, y: 550, width: 80, height: 20 },
         stars: [],
         keys: {},
@@ -26,8 +27,16 @@ function initializeStarGame() {
         currentScore: document.getElementById('currentScore'),
         highScore: document.getElementById('highScore'),
         finalScore: document.getElementById('finalScore'),
+        highScoreInfo: document.getElementById('highScoreInfo'),
         playerGreeting: document.getElementById('playerGreeting'),
-        playAgainBtn: document.getElementById('playAgainBtn')
+        celebrationMessage: document.getElementById('celebrationMessage'),
+        playAgainBtn: document.getElementById('playAgainBtn'),
+        desktopOption: document.getElementById('desktopOption'),
+        mobileOption: document.getElementById('mobileOption'),
+        controlInstructions: document.getElementById('controlInstructions'),
+        mobileControls: document.getElementById('mobileControls'),
+        leftBtn: document.getElementById('leftBtn'),
+        rightBtn: document.getElementById('rightBtn')
     };
 
     // Check if all elements exist
@@ -39,20 +48,24 @@ function initializeStarGame() {
 
     const canvas = elements.gameCanvas;
     const ctx = canvas.getContext('2d');
+    const gameContainer = document.querySelector('.star-game-container');
 
     // Initialize canvas size
     function initCanvas() {
-        canvas.width = 600;
-        canvas.height = 600;
+        const containerWidth = gameContainer.clientWidth;
+        const containerHeight = gameContainer.clientHeight;
+        canvas.width = containerWidth;
+        canvas.height = containerHeight;
+        gameState.basket.y = canvas.height - 50;
     }
 
-    // Load high score from memory (session-based)
+    // Load high score from memory (session-based) with default of 60
     function loadHighScore() {
         try {
             const saved = sessionStorage.getItem('starCatcherHighScore');
-            return saved ? parseInt(saved) : 0;
+            return saved ? parseInt(saved) : 60; // Default high score is 60
         } catch (e) {
-            return 0;
+            return 60;
         }
     }
 
@@ -74,6 +87,26 @@ function initializeStarGame() {
             saveHighScore(gameState.score);
             elements.highScore.textContent = gameState.score;
         }
+    }
+
+    // Device selection handlers
+    function selectDevice(deviceType) {
+        gameState.deviceType = deviceType;
+        
+        // Update UI
+        elements.desktopOption.classList.remove('selected');
+        elements.mobileOption.classList.remove('selected');
+        
+        if (deviceType === 'desktop') {
+            elements.desktopOption.classList.add('selected');
+            elements.controlInstructions.innerHTML = 'Use <strong>A & D</strong> keys or <strong>← & →</strong> arrow keys to move your basket';
+        } else {
+            elements.mobileOption.classList.add('selected');
+            elements.controlInstructions.innerHTML = 'Use the <strong>on-screen buttons</strong> to move your basket left and right';
+        }
+        
+        // Enable start button
+        elements.startBtn.disabled = false;
     }
 
     // Add this function to clear all key states
@@ -158,12 +191,25 @@ function initializeStarGame() {
 
     // Update game logic
     function updateGame() {
-        // Move basket based on key input (Arrow keys or A/D keys)
-        if ((gameState.keys['ArrowLeft'] || gameState.keys['KeyA']) && gameState.basket.x > 0) {
-            gameState.basket.x -= 8;
-        }
-        if ((gameState.keys['ArrowRight'] || gameState.keys['KeyD']) && gameState.basket.x < canvas.width - gameState.basket.width) {
-            gameState.basket.x += 8;
+        // Move basket based on input
+        const moveSpeed = 8;
+        
+        if (gameState.deviceType === 'desktop') {
+            // Keyboard controls for desktop
+            if ((gameState.keys['ArrowLeft'] || gameState.keys['KeyA']) && gameState.basket.x > 0) {
+                gameState.basket.x -= moveSpeed;
+            }
+            if ((gameState.keys['ArrowRight'] || gameState.keys['KeyD']) && gameState.basket.x < canvas.width - gameState.basket.width) {
+                gameState.basket.x += moveSpeed;
+            }
+        } else {
+            // Mobile touch controls
+            if (gameState.keys['mobile-left'] && gameState.basket.x > 0) {
+                gameState.basket.x -= moveSpeed;
+            }
+            if (gameState.keys['mobile-right'] && gameState.basket.x < canvas.width - gameState.basket.width) {
+                gameState.basket.x += moveSpeed;
+            }
         }
 
         // Spawn new stars
@@ -190,12 +236,19 @@ function initializeStarGame() {
             }
         }
 
-        // Increase difficulty every 15 seconds
+        // Gradual difficulty increase over time
         const elapsedTime = 45 - gameState.timeLeft;
-        if (elapsedTime > 0 && elapsedTime % 15 === 0) {
-            gameState.starSpeed = Math.min(gameState.starSpeed + 0.5, 8);
-            gameState.spawnRate = Math.min(gameState.spawnRate + 0.005, 0.06);
-        }
+        const progressRatio = elapsedTime / 45; // 0 to 1 over 45 seconds
+        
+        // Gradually increase star speed from 2 to 6 over the course of the game
+        const baseSpeed = 2;
+        const maxSpeed = 6;
+        gameState.starSpeed = baseSpeed + (maxSpeed - baseSpeed) * progressRatio;
+        
+        // Gradually increase spawn rate from 0.02 to 0.05 over the course of the game
+        const baseSpawnRate = 0.02;
+        const maxSpawnRate = 0.05;
+        gameState.spawnRate = baseSpawnRate + (maxSpawnRate - baseSpawnRate) * progressRatio;
     }
 
     // Render game graphics
@@ -227,6 +280,8 @@ function initializeStarGame() {
 
     // Start the game
     function startGame() {
+        if (!gameState.deviceType) return;
+        
         console.log('Starting game...'); // Debug log
         gameState.playerName = elements.playerName.value.trim() || 'Player';
         gameState.isPlaying = true;
@@ -235,7 +290,7 @@ function initializeStarGame() {
         gameState.stars = [];
         gameState.starSpeed = 2;
         gameState.spawnRate = 0.02;
-        gameState.basket.x = 275;
+        gameState.basket.x = (canvas.width - gameState.basket.width) / 2;
         
         // Clear keyboard states at game start
         clearKeyStates();
@@ -245,6 +300,11 @@ function initializeStarGame() {
         elements.gameHud.style.display = 'flex';
         elements.gameTimer.style.display = 'block';
         elements.gameCanvas.style.display = 'block';
+        
+        // Show mobile controls if mobile device selected
+        if (gameState.deviceType === 'mobile') {
+            elements.mobileControls.classList.add('show');
+        }
 
         // Update displays
         elements.currentScore.textContent = '0';
@@ -274,8 +334,27 @@ function initializeStarGame() {
         // Clear keyboard states to prevent stuck keys
         clearKeyStates();
 
-        // Update final score and show game over screen
-        elements.finalScore.textContent = `Final Score: ${gameState.score}`;
+        // Hide mobile controls
+        elements.mobileControls.classList.remove('show');
+
+        // Get current high score and check if player beat it
+        const currentHighScore = loadHighScore();
+        const isNewHighScore = gameState.score > currentHighScore;
+        
+        // Update final score text
+        elements.finalScore.textContent = `Your Final Score: ${gameState.score}`;
+        
+        // Update high score info and celebration message
+        if (isNewHighScore) {
+            // Save new high score
+            saveHighScore(gameState.score);
+            elements.highScoreInfo.textContent = `Current Highest Score: ${gameState.score}`;
+            elements.celebrationMessage.innerHTML = `🎉 CONGRATULATIONS! 🎉<br>NEW HIGH SCORE!<br>🌟 Amazing work, ${gameState.playerName}! 🌟`;
+        } else {
+            elements.highScoreInfo.textContent = `Current Highest Score: ${currentHighScore}`;
+            elements.celebrationMessage.textContent = '';
+        }
+        
         elements.playerGreeting.textContent = `Great job, ${gameState.playerName}!`;
         elements.gameOverScreen.style.display = 'flex';
     }
@@ -289,9 +368,14 @@ function initializeStarGame() {
         elements.gameHud.style.display = 'none';
         elements.gameTimer.style.display = 'none';
         elements.gameCanvas.style.display = 'none';
+        elements.mobileControls.classList.remove('show');
         elements.startScreen.style.display = 'flex';
         elements.playerName.focus();
     }
+
+    // Event listeners for device selection
+    elements.desktopOption.addEventListener('click', () => selectDevice('desktop'));
+    elements.mobileOption.addEventListener('click', () => selectDevice('mobile'));
 
     // Event listeners
     elements.startBtn.addEventListener('click', function(e) {
@@ -309,13 +393,65 @@ function initializeStarGame() {
     elements.playerName.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            startGame();
+            if (!elements.startBtn.disabled) {
+                startGame();
+            }
         }
     });
 
-    // Keyboard controls - only work during gameplay
-    document.addEventListener('keydown', (e) => {
+    // Mobile button controls
+    elements.leftBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
         if (gameState.isPlaying) {
+            gameState.keys['mobile-left'] = true;
+        }
+    });
+
+    elements.leftBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        gameState.keys['mobile-left'] = false;
+    });
+
+    elements.rightBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        if (gameState.isPlaying) {
+            gameState.keys['mobile-right'] = true;
+        }
+    });
+
+    elements.rightBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        gameState.keys['mobile-right'] = false;
+    });
+
+    // Also support mouse events for mobile buttons (for testing)
+    elements.leftBtn.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        if (gameState.isPlaying && gameState.deviceType === 'mobile') {
+            gameState.keys['mobile-left'] = true;
+        }
+    });
+
+    elements.leftBtn.addEventListener('mouseup', (e) => {
+        e.preventDefault();
+        gameState.keys['mobile-left'] = false;
+    });
+
+    elements.rightBtn.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        if (gameState.isPlaying && gameState.deviceType === 'mobile') {
+            gameState.keys['mobile-right'] = true;
+        }
+    });
+
+    elements.rightBtn.addEventListener('mouseup', (e) => {
+        e.preventDefault();
+        gameState.keys['mobile-right'] = false;
+    });
+
+    // Keyboard controls - only work for desktop
+    document.addEventListener('keydown', (e) => {
+        if (gameState.isPlaying && gameState.deviceType === 'desktop') {
             gameState.keys[e.code] = true;
             
             // Prevent arrow keys and A/D keys from scrolling the page during gameplay
@@ -326,7 +462,7 @@ function initializeStarGame() {
     });
 
     document.addEventListener('keyup', (e) => {
-        if (gameState.isPlaying) {
+        if (gameState.isPlaying && gameState.deviceType === 'desktop') {
             gameState.keys[e.code] = false;
         }
     });
@@ -338,12 +474,23 @@ function initializeStarGame() {
         }
     });
 
+    // Prevent context menu on mobile buttons
+    elements.leftBtn.addEventListener('contextmenu', (e) => e.preventDefault());
+    elements.rightBtn.addEventListener('contextmenu', (e) => e.preventDefault());
+
     // Initialize game
     initCanvas();
     updateHighScore();
-    
-    // Don't auto-focus on name input - let users discover the game naturally
-    // The game should be passive until user interacts with it
+
+    // Add resize listener
+    window.addEventListener('resize', () => {
+        initCanvas();
+        if (gameState.isPlaying) {
+            renderGame(); // Redraw game if in progress
+        } else {
+            drawBasket(); // Redraw basket on start screen
+        }
+    });
 }
 
 // Initialize game when DOM is ready

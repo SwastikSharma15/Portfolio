@@ -391,18 +391,34 @@
                 <div class="star-start-screen" id="startScreen">
                     <h1 class="star-game-title">⭐ Catch the Falling Stars ⭐</h1>
                     <input type="text" class="star-name-input" id="playerName" placeholder="Enter your name" maxlength="20">
-                    <div class="star-instructions">
+                    
+                    <!-- Device Selection -->
+                    <div class="device-selection">
+                        <h3>Select your device:</h3>
+                        <div class="device-options">
+                            <div class="device-option" id="desktopOption">
+                                <div class="device-icon">🖥️</div>
+                                <div class="device-label">Desktop</div>
+                            </div>
+                            <div class="device-option" id="mobileOption">
+                                <div class="device-icon">📱</div>
+                                <div class="device-label">Mobile</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="star-instructions" id="gameInstructions">
                         <p><strong>How to Play:</strong></p>
-                        <p>Use <strong>A & D</strong> keys or <strong>← & →</strong> arrow keys to move your basket</p>
+                        <p id="controlInstructions">Please select your device first</p>
                         <p>Catch as many falling stars as you can in 45 seconds!</p>
                     </div>
-                    <button class="star-start-btn" id="startBtn">Let's Go!</button>
+                    <button class="star-start-btn" id="startBtn" disabled>Let's Go!</button>
                 </div>
 
                 <!-- Game HUD -->
                 <div class="star-hud" id="gameHud" style="display: none;">
-                    <div>Score: <span id="currentScore">0</span></div>
-                    <div>High Score: <span id="highScore">0</span></div>
+                    <div>Your Score: <span id="currentScore">0</span></div>
+                    <div>Current Highest Score: <span id="highScore">0</span></div>
                 </div>
 
                 <div class="star-timer" id="gameTimer" style="display: none;">45</div>
@@ -410,11 +426,19 @@
                 <!-- Game Canvas -->
                 <canvas class="star-game-canvas" id="gameCanvas" style="display: none;"></canvas>
 
+                <!-- Mobile Controls -->
+                <div class="mobile-controls" id="mobileControls">
+                    <div class="mobile-btn left" id="leftBtn"></div>
+                    <div class="mobile-btn right" id="rightBtn"></div>
+                </div>
+
                 <!-- Game Over Screen -->
                 <div class="star-game-over" id="gameOverScreen">
                     <h2>Game Over!</h2>
-                    <div class="star-final-score" id="finalScore">Final Score: 0</div>
+                    <div class="star-final-score" id="finalScore">Your Final Score: 0</div>
+                    <div class="star-high-score-info" id="highScoreInfo">Current Highest Score: 60</div>
                     <div id="playerGreeting"></div>
+                    <div class="star-celebration" id="celebrationMessage"></div>
                     <button class="star-play-again-btn" id="playAgainBtn">Play Again</button>
                 </div>
             </div>

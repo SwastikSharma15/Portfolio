@@ -1,12 +1,13 @@
 .star-game-wrapper {
     width: 100%;
-    padding: 40px 0;
+    padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;
+    box-sizing: border-box;
 }
 
 /* Dark mode compatibility */
@@ -42,6 +43,7 @@ body.dark .star-game-wrapper {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* Dark mode container */
@@ -86,9 +88,64 @@ body.dark .star-start-screen {
     width: 250px;
 }
 
+/* Device Selection Styles */
+.device-selection {
+    text-align: center;
+}
+
+.device-selection h3 {
+    margin-bottom: 15px;
+    margin-top: 0;
+    color: #FFD700;
+    font-size: 1.3em;
+}
+
+.device-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: nowrap;
+}
+
+.device-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    min-width: 80px;
+}
+
+.device-option:hover {
+    border-color: #FFD700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.device-option.selected {
+    border-color: #FFD700;
+    background: rgba(255, 215, 0, 0.2);
+}
+
+.device-icon {
+    font-size: 1.4em;
+    margin-bottom: 6px;
+}
+
+.device-label {
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
 .star-instructions {
     text-align: center;
-    margin: 20px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -131,6 +188,12 @@ body.dark .star-instructions p {
     transform: scale(1.05);
 }
 
+.star-start-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .star-game-canvas {
     width: 100%;
     height: 100%;
@@ -159,6 +222,61 @@ body.dark .star-instructions p {
     z-index: 10;
 }
 
+/* Mobile Controls */
+.mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 20;
+}
+
+.mobile-controls.show {
+    display: flex;
+}
+
+.mobile-btn {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    transition: all 0.1s ease;
+}
+
+.mobile-btn:active {
+    background: rgba(0, 0, 0, 0.6);
+    transform: scale(0.95);
+}
+
+.mobile-btn::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.mobile-btn.left::before {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #000;
+}
+
+.mobile-btn.right::before {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #000;
+}
+
 .star-game-over {
     position: absolute;
     top: 0;
@@ -179,9 +297,18 @@ body.dark .star-game-over {
     background: rgba(17, 17, 17, 0.95);
 }
 
-.star-final-score {
-    font-size: 2em;
+.star-final-score,
+.star-high-score-info {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.star-celebration {
+    font-size: 1.8em;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     margin-bottom: 20px;
+    animation: twinkle 1.5s infinite;
 }
 
 .star-play-again-btn {
@@ -203,4 +330,144 @@ body.dark .star-game-over {
 @keyframes twinkle {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .star-game-wrapper {
+        padding: 10px;
+    }
+
+    .star-game-container {
+        width: 95vw;
+        height: 85vh; /* Use more vertical space */
+        max-width: 500px;
+        min-height: 400px; /* Ensure minimum height */
+    }
+
+    .star-game-title {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .star-name-input {
+        width: 80%;
+        padding: 12px;
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .device-selection h3 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    /* Keep device options in a row */
+    .device-options {
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .device-option {
+        min-width: 65px;
+        padding: 6px 10px;
+    }
+
+    .device-icon {
+        font-size: 1.2em;
+        margin-bottom: 4px;
+    }
+
+    .device-label {
+        font-size: 0.75em;
+    }
+
+    .star-instructions {
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+    }
+
+    .star-instructions p {
+        font-size: 1em;
+        margin: 6px 0;
+    }
+
+    .star-start-btn {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+
+    .mobile-controls {
+        padding: 0 20px;
+    }
+
+    .mobile-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .star-hud {
+        font-size: 1.1em;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .star-timer {
+        top: 35px;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-game-wrapper {
+        padding: 10px;
+    }
+
+    .star-game-title {
+        font-size: 1.8em;
+    }
+
+    .star-start-btn,
+    .star-play-again-btn {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+
+    .mobile-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mobile-btn.left::before {
+        border-right-width: 15px;
+    }
+
+    .mobile-btn.right::before {
+        border-left-width: 15px;
+    }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+    .star-game-container {
+        height: 95vh;
+        padding-bottom: 60px;
+    }
+
+    .star-start-screen {
+        justify-content: flex-start;
+        padding-top: 20px;
+        overflow-y: auto;
+    }
+
+    .mobile-controls {
+        bottom: 10px;
+    }
+
+    .mobile-btn {
+        width: 45px;
+        height: 45px;
+    }
 }
