@@ -33,6 +33,10 @@ body.dark .star-game-wrapper {
     letter-spacing: -1px;
 }
 
+.fun-area-title {
+    font-family: 'Chewy', cursive;
+}
+
 .star-game-container {
     max-width: 600px;
     width: 90%;
