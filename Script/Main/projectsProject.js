@@ -13,13 +13,13 @@ const projectsData = [
     },
     {
         title: "TidyTasks",
-        description: "Built a responsive and interactive modern ToDo List app using React and useState, with dynamic task management and real-time UI updates for a seamless experience.",
-        image: "Assets/",
+        description: "Built a task management app with dynamic add/edit/delete features, smooth UI interactions, and real-time updates using React hooks.",
+        image: "Assets/tidy_tasks.png",
         imageType: "img",
         tags: ["HTML", "CSS", "React JS"],
         links: {
-            demo: "https://todosreactapp.vercel.app/",
-            github: "https://github.com/SwastikSharma15/ToDo_s-List-in-React"
+            demo: "https://tidytasks.vercel.app/",
+            github: "https://github.com/SwastikSharma15/TidyTasks"
         }
     },
     {
