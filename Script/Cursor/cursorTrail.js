@@ -102,8 +102,8 @@ function onMousemove(e) {
     document.removeEventListener('mousemove', onMousemove),
     document.removeEventListener('touchstart', onMousemove),
     document.addEventListener('mousemove', c),
-    document.addEventListener('touchmove', c),
-    document.addEventListener('touchstart', l),
+    document.addEventListener('touchmove', c, { passive: false }),
+    document.addEventListener('touchstart', l, { passive: false }),
     c(e),
     o(),
     render();
@@ -225,7 +225,7 @@ window.onload = function () {
     }
 
     document.addEventListener('mousemove', onMousemove);
-    document.addEventListener('touchstart', onMousemove);
+    document.addEventListener('touchstart', onMousemove, { passive: false });
     window.addEventListener('resize', resizeCanvas);
     
     window.addEventListener('focus', () => {
