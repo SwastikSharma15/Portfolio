@@ -160,20 +160,50 @@ body.dark .navbar-glass .nav-link-glass[data-section="contact"] {
     color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Responsive design - Hide glass navbar only on mobile/tablet */
+/* Hide glass navbar below 769px to prevent horizontal overflow */
 @media (max-width: 768px) {
     .navbar-glass {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
     }
 }
 
-/* Ensure glass navbar is visible on desktop */
+/* Ensure glass navbar is visible only on desktop (769px and above) */
 @media (min-width: 769px) {
     .navbar-glass {
-        display: flex !important; /* Changed from block to flex */
+        display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        width: 520px;
+    }
+}
+
+/* For screens between 769px-900px, constrain navbar width */
+@media (min-width: 769px) and (max-width: 900px) {
+    .navbar-glass {
+        width: calc(100vw - 60px);
+        max-width: 520px;
+    }
+}
+
+/* Responsive navigation padding to prevent overflow */
+@media (max-width: 768px) {
+    .nav-2 {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-2 {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-2 {
+        padding: 8px 10px;
     }
 }
