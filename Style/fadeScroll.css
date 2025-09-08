@@ -36,13 +36,13 @@
 /* Slide from left */
 .fade-slide-left {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-slide-left.is-visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 /* Slide from right */
@@ -130,14 +130,14 @@
 
 #projects .videos-container {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   /* transition-delay: 0.4s; */
 }
 
 #projects .videos-container.is-visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 #projects .fun-area-container {
@@ -199,16 +199,16 @@
 /* Animation for video cards - preserve hover effects */
 .video-card {
   opacity: 0;
-  transform: translateX(-20px) rotateY(10deg);
+  transform: translateY(20px) rotateY(10deg);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .video-card.is-visible {
   opacity: 1;
-  transform: translateX(0) rotateY(0deg);
-  /* Ensure hover animations work after fade-in */
+  transform: translateY(0) rotateY(0deg);
   transition: all 0.3s ease;
 }
+
 
 /* Video card hover effects - only card movement, no video zoom */
 .video-card.is-visible:hover {
@@ -356,4 +356,20 @@ body.dark .video-card.is-visible:hover {
   .submit-btn.is-visible {
     transform: none !important;
   }
+}
+
+.videos-grid .video-card:nth-child(1).is-visible {
+  transition-delay: 0.1s;
+}
+
+.videos-grid .video-card:nth-child(2).is-visible {
+  transition-delay: 0.2s;
+}
+
+.videos-grid .video-card:nth-child(3).is-visible {
+  transition-delay: 0.3s;
+}
+
+.videos-grid .video-card:nth-child(4).is-visible {
+  transition-delay: 0.4s;
 }
