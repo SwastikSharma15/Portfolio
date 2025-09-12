@@ -3,7 +3,7 @@ const projectsData = [
     {
         title: "Movie Plex",
         description: "Built a responsive movie browsing app with React and Vite, featuring real-time search via external APIs and optimized performance using hooks and reusable components.",
-        image: "Assets/movieplex.png",
+        image: "Assets/movieplex.webp",
         imageType: "img", // "img" or "video"
         tags: ["HTML", "CSS", "React JS"],
         links: {
@@ -25,7 +25,7 @@ const projectsData = [
     {
         title: "Amazon Clone",
         description: "A responsive Amazon-inspired website with shopping cart, order placement, real-time tracking, and order history features.",
-        image: "Assets/Amazon.png",
+        image: "Assets/Amazon.webp",
         imageType: "img",
         tags: ["HTML", "CSS", "JavaScript"],
         links: {
@@ -36,7 +36,7 @@ const projectsData = [
     {
         title: "Portfolio Website",
         description: "A responsive developer portfolio featuring interactive UI, dark mode, and project highlights.",
-        image: "Assets/Portfolio.png",
+        image: "Assets/Portfolio.webp",
         imageType: "img",
         tags: ["HTML", "CSS", "JavaScript"],
         links: {
@@ -47,8 +47,11 @@ const projectsData = [
     {
         title: "Cursor Trails Animation",
         description: "Refined Shiny Cursor Animation is a stylish, interactive mouse trail effect built with HTML, CSS, and JavaScript...",
-        image: "Assets/trail_animation.mp4",
         imageType: "video",
+        videoSources: [
+            { src: "Assets/trail_animation.webm", type: "video/webm" },
+            { src: "Assets/trail_animation.mp4", type: "video/mp4" }
+        ],
         tags: ["HTML", "CSS", "JavaScript"],
         links: {
             demo: "https://swastiksharma15.github.io/Cursor-Trails-Animation/",
@@ -81,8 +84,12 @@ const projectsData = [
 
 // Function to create a project card HTML
 function createProjectCard(project) {
-    const mediaElement = project.imageType === "video" 
-        ? `<video class="project-placeholder-img" src="${project.image}" autoplay muted loop playsinline></video>`
+    const mediaElement = project.imageType === "video"
+    ? `
+        <video class="project-placeholder-img" autoplay muted loop playsinline poster="Assets/trail_animation.webp">
+        ${project.videoSources.map(
+            (v) => `<source src="${v.src}" type="${v.type}">`
+        ).join("\n")}Your browser does not support the video tag.</video>`
         : `<img class="project-placeholder-img" src="${project.image}" alt="${project.title}">`;
     
     const tagsHTML = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');

@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my work as a Frontend Developer. Built with HTML, CSS, and JavaScript, featuring smooth animations, dark mode, and interactive elements.
 
-![Portfolio Preview](Assets/Portfolio.png)
+![Portfolio Preview](Assets/Portfolio.webp)
 
 ## 🌟 Features
 
