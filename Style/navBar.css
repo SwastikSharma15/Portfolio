@@ -207,3 +207,16 @@ body.dark .navbar-glass .nav-link-glass[data-section="contact"] {
         padding: 8px 10px;
     }
 }
+
+.logo {
+  width: 35px;
+  padding-top: 10px;
+}
+
+/* Light mode (default) */
+.light-logo { display: inline; }
+.dark-logo { display: none; }
+
+/* Dark mode */
+body.dark .light-logo { display: none; }
+body.dark .dark-logo { display: inline; }
