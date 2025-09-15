@@ -210,7 +210,14 @@ body.dark .navbar-glass .nav-link-glass[data-section="contact"] {
 
 .logo {
   width: 35px;
-  padding-top: 10px;
+  margin-top: 10px;
+  display: inline-block; /* needed for transform */
+  transition: transform 0.4s ease; /* smooth rotation */
+  transform-origin: center;
+}
+
+.logo:hover {
+  transform: scale(1.4) rotate(180deg);
 }
 
 /* Light mode (default) */
