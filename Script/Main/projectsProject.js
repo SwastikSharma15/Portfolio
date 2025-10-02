@@ -40,7 +40,7 @@ const projectsData = [
         imageType: "img",
         tags: ["HTML", "CSS", "JavaScript"],
         links: {
-            demo: "https://swastiksharma15.github.io/My-Site/",
+            demo: "https://swastiksharma15.github.io/Portfolio/index.html",
             github: "https://github.com/SwastikSharma15/My-Site"
         }
     },
