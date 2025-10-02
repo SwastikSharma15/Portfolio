@@ -1,17 +1,6 @@
 // Projects data array
 const projectsData = [
     {
-        title: "Movie Plex",
-        description: "Built a responsive movie browsing app with React and Vite, featuring real-time search via external APIs and optimized performance using hooks and reusable components.",
-        image: "Assets/movieplex.webp",
-        imageType: "img", // "img" or "video"
-        tags: ["HTML", "CSS", "React JS"],
-        links: {
-            demo: "https://movieplexapp.vercel.app/",
-            github: "https://github.com/SwastikSharma15/Movie-React-App"
-        }
-    },
-    {
         title: "TidyTasks",
         description: "Built a task management app with dynamic add/edit/delete features, smooth UI interactions, and real-time updates using React hooks.",
         image: "Assets/tidy_tasks.png",
@@ -20,6 +9,17 @@ const projectsData = [
         links: {
             demo: "https://tidytasks.vercel.app/",
             github: "https://github.com/SwastikSharma15/TidyTasks"
+        }
+    },
+    {
+        title: "Movie Plex",
+        description: "Built a responsive movie browsing app with React and Vite, featuring real-time search via external APIs and optimized performance using hooks and reusable components.",
+        image: "Assets/movieplex.webp",
+        imageType: "img", // "img" or "video"
+        tags: ["HTML", "CSS", "React JS"],
+        links: {
+            demo: "https://movieplexapp.vercel.app/",
+            github: "https://github.com/SwastikSharma15/Movie-React-App"
         }
     },
     {
