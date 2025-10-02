@@ -102,7 +102,7 @@ npx serve
 
 ## 🌐 Live Demo
 
-Visit the live website: [Portfolio Website](https://swastiksharma15.github.io/My-Site/)
+Visit the live website: [Portfolio Website](https://swastiksharma15.github.io/Portfolio/index.html)
 
 ## 📱 Responsive Design
 
