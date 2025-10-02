@@ -41,7 +41,7 @@ const projectsData = [
         tags: ["HTML", "CSS", "JavaScript"],
         links: {
             demo: "https://swastiksharma15.github.io/Portfolio/index.html",
-            github: "https://github.com/SwastikSharma15/My-Site"
+            github: "https://github.com/SwastikSharma15/Portfolio"
         }
     },
     {
