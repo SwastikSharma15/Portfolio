@@ -22,17 +22,7 @@ const projectsData = [
             github: "https://github.com/SwastikSharma15/Movie-React-App"
         }
     },
-    {
-        title: "Amazon Clone",
-        description: "A responsive Amazon-inspired website with shopping cart, order placement, real-time tracking, and order history features.",
-        image: "Assets/Amazon.webp",
-        imageType: "img",
-        tags: ["HTML", "CSS", "JavaScript"],
-        links: {
-            demo: "https://swastiksharma15.github.io/Amazon-with-HTML-CSS-JS/",
-            github: "https://github.com/SwastikSharma15/Amazon-with-HTML-CSS-JS"
-        }
-    },
+    
     {
         title: "Portfolio Website",
         description: "A responsive developer portfolio featuring interactive UI, dark mode, and project highlights.",
@@ -42,6 +32,17 @@ const projectsData = [
         links: {
             demo: "https://swastiksharma15.github.io/Portfolio/index.html",
             github: "https://github.com/SwastikSharma15/Portfolio"
+        }
+    },
+    {
+        title: "Amazon Clone",
+        description: "A responsive Amazon-inspired website with shopping cart, order placement, real-time tracking, and order history features.",
+        image: "Assets/Amazon.webp",
+        imageType: "img",
+        tags: ["HTML", "CSS", "JavaScript"],
+        links: {
+            demo: "https://swastiksharma15.github.io/Amazon-with-HTML-CSS-JS/",
+            github: "https://github.com/SwastikSharma15/Amazon-with-HTML-CSS-JS"
         }
     },
     {
