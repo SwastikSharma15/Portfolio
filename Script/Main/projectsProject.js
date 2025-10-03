@@ -22,7 +22,17 @@ const projectsData = [
             github: "https://github.com/SwastikSharma15/Movie-React-App"
         }
     },
-    
+    {
+        title: "ShopKar",
+        description: "Full-featured e-commerce platform using React.js and Vite with dynamic cart, RESTful APIs, advanced search/filtering, and mobile-first checkout.",
+        image: "Assets/ShopKar.webp",
+        imageType: "img",
+        tags: ["HTML", "CSS", "React JS"],
+        links: {
+            demo: "https://shopkar-react.vercel.app",
+            github: "https://github.com/SwastikSharma15/ShopKar"
+        }
+    },
     {
         title: "Portfolio Website",
         description: "A responsive developer portfolio featuring interactive UI, dark mode, and project highlights.",
