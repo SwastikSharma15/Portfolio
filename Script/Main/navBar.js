@@ -55,8 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if target section exists on current page
         const targetElement = document.getElementById(section);
         if (targetElement) {
-            // Section exists on current page - prevent default and scroll
-            e.preventDefault();
+            // Only prevent default on desktop, allow default behavior on mobile
+            if (window.innerWidth > 768) {
+                e.preventDefault();
+            }
             currentSection = section;
             
             // Update animation position

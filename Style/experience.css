@@ -260,7 +260,8 @@ body {
     }
     
     .container {
-        padding: 2rem 0.5rem;
+        max-width: 96vw; /* use viewport width to keep a small comfortable gap */
+        padding: 1rem 0.5rem;
     }
     
     .dropdown-content {
