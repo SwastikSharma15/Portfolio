@@ -118,10 +118,17 @@ class PageLoader {
       }, LOADER_CONFIG.fadeOutDuration / 2);
     }
     
-    // Enable scrolling
+    // Enable scrolling - ensure this works on mobile
     document.body.classList.remove('loading', 'page-loader-active');
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
+    document.body.style.overflow = '';
+    document.body.style.overflowY = 'auto';
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflow = '';
+    document.documentElement.style.overflowY = 'auto';
+    document.documentElement.style.overflowX = 'hidden';
+    
+    // Force layout recalculation to ensure scrolling is enabled
+    document.body.offsetHeight;
     
     console.log('Loader hidden successfully');
   }

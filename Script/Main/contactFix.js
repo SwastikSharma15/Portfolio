@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click handlers to all contact links
     contactLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            // Only prevent default on desktop, allow default behavior on mobile
+            if (window.innerWidth > 768) {
+                e.preventDefault();
+            }
             
             /* console.log('Contact link clicked'); */
             

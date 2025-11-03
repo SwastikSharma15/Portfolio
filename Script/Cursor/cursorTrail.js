@@ -90,8 +90,8 @@ function onMousemove(e) {
     function c(e) {
         e.touches
             ? ((pos.x = e.touches[0].pageX), (pos.y = e.touches[0].pageY))
-            : ((pos.x = e.clientX), (pos.y = e.clientY)),
-            e.preventDefault();
+            : ((pos.x = e.clientX), (pos.y = e.clientY));
+        // Removed preventDefault to allow scrolling on mobile
     }
 
     function l(e) {
@@ -102,8 +102,8 @@ function onMousemove(e) {
     document.removeEventListener('mousemove', onMousemove),
     document.removeEventListener('touchstart', onMousemove),
     document.addEventListener('mousemove', c),
-    document.addEventListener('touchmove', c, { passive: false }),
-    document.addEventListener('touchstart', l, { passive: false }),
+    document.addEventListener('touchmove', c, { passive: true }),
+    document.addEventListener('touchstart', l, { passive: true }),
     c(e),
     o(),
     render();
