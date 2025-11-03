@@ -262,3 +262,48 @@ body:has(.page-loader:not(.fade-out)) {
     height: 35px;
   }
 }
+
+
+
+/* Dark-mode: uniform background across entire site */
+body.dark {
+  background: #0b0b0d !important; /* pick your preferred dark color */
+  color: #e8e8e8 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Let sections and cards be transparent so the body background shows through */
+body.dark section,
+body.dark .videos-container,
+body.dark .projects-container,
+body.dark .video-card,
+body.dark .project-card,
+body.dark .star-game-container {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Ensure navbars and other top containers don't show a different bg */
+body.dark nav,
+body.dark .nav-2,
+body.dark .navbar-glass {
+  background: transparent !important;
+}
+
+/* Keep canvas transparent so the body bg remains visible */
+body.dark canvas {
+  background: transparent !important;
+}
+
+/* Make sure common text and link elements have good contrast */
+body.dark a,
+body.dark .linktext,
+body.dark .home-content h1,
+body.dark .home-content h2,
+body.dark .home-content p,
+body.dark .location,
+body.dark .video-title,
+body.dark .video-description {
+  color: #e8e8e8 !important;
+}

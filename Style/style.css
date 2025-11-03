@@ -6,10 +6,29 @@
 
 html, body {
   height: 100%;
+  width: 100%;
   background: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+  touch-action: manipulation; /* Improve touch handling on all devices */
+  position: relative;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto !important;
+    position: relative;
+    height: auto;
+    min-height: 100%;
+  }
+  
+  body {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* For modern browsers */
@@ -112,7 +131,7 @@ nav {
 
 /* Updated Home Section */
 #home {
-  min-height: 100vh;
+  min-height: 90vh;
   position: relative;
   overflow: hidden;
   background: transparent;
@@ -287,12 +306,11 @@ canvas {
 
 /* Other sections for scrolling */
 section {
-  /* min-height: 100vh; */
-  /* padding: 50px; */
+  margin: 0;
+  position: relative;
+  overflow: hidden;
   background: #ffffff;
   color: #111;
-  margin: 0;
-  padding: 0;
 }
 #experience,
 #projects,
