@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Posts - Swastik Sharma</title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="Assets/SpeedX_Logo_Transparent_white.webp"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="Assets/SpeedX_Logo_Transparent_white.png"
+    />
+    <link rel="stylesheet" href="Style/blogs-page.css" />
+    <link rel="stylesheet" href="Style/style.css" />
+    <link rel="stylesheet" href="Style/night_Home.css" />
+    <link rel="stylesheet" href="Style/buttonGroup.css" />
+    <link rel="stylesheet" href="Style/darkModeButton.css" />
+    <link rel="stylesheet" href="Style/musicButton.css" />
+    <link rel="stylesheet" href="Style/mediaQuery.css" />
+    <link rel="stylesheet" href="Style/mobileUI.css" />
+    <style>
+      /* Fix button alignment in blogs page */
+      .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .theme-toggle-wrapper,
+      .music-player-widget {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Remove scrollbar completely */
+      html, body {
+        height: auto !important;
+        overflow-y: auto !important;
+      }
+
+      body {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+
+      body::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+      }
+
+      html::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+      }
+
+      /* Remove scrollbar from article elements */
+      article {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        overflow: hidden !important;
+      }
+
+      article::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+      }
+
+      .blog-post {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        overflow: hidden !important;
+      }
+
+      .blog-post::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+      }
+
+      .blog-posts-wrapper {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        overflow: visible !important;
+      }
+
+      .blog-posts-wrapper::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+      }
+    </style>
+    <link rel="stylesheet" href="Style/navBar.css" />
+  </head>
+  <body>
+    <!-- Main navigation bar -->
+    <nav class="nav-2">
+      <!-- Left side: Portfolio link -->
+      <div class="nav-left-side">
+        <a class="item" href="./index.html#home">
+          <img
+            src="Assets/SpeedX_Logo_Transparent.png"
+            class="logo light-logo"
+            alt="Logo"
+          />
+          <img
+            src="Assets/SpeedX_Logo_Transparent_white.png"
+            class="logo dark-logo"
+            alt="Logo"
+          />
+        </a>
+      </div>
+
+      <!-- Center: Glassmorphism Navigation -->
+      <div class="navbar-glass">
+        <a href="./index.html#home" class="nav-link-glass" data-section="home"
+          >Home</a
+        >
+        <a
+          href="./index.html#experience"
+          class="nav-link-glass"
+          data-section="experience"
+          >Experience</a
+        >
+        <a
+          href="./index.html#projects"
+          class="nav-link-glass"
+          data-section="projects"
+          >Projects</a
+        >
+        <a
+          href="./index.html#contact"
+          class="nav-link-glass"
+          data-section="contact"
+          >Contact</a
+        >
+        <div class="nav-animation start-projects"></div>
+      </div>
+
+      <!-- Right side: Controls -->
+      <div class="nav-right-side">
+        <div class="nav-controls">
+          <div class="theme-toggle-wrapper">
+            <button
+              class="theme-btn unicode-version"
+              onclick="toggleButton(this)"
+            >
+              <span class="morph-icon"></span>
+            </button>
+          </div>
+
+          <div class="music-player-widget">
+            <div class="play-button-widget">
+              <div class="container play-button-container">
+                <label>
+                  <input type="checkbox" class="play-btn animated-play-btn" />
+                  <div class="play-icon animated-play-icon"></div>
+                  <div class="pause-icon animated-pause-icon"></div>
+                  <input
+                    type="range"
+                    class="seek-slider"
+                    min="0"
+                    value="0"
+                    step="0.1"
+                  />
+                  <audio
+                    id="siteAudio"
+                    src="Assets/City Ruins - Rays of Light (NieR_Automata Original Soundtrack)Audio.mp3"
+                    preload="auto"
+                    loop
+                  ></audio>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Hamburger Menu -->
+        <div class="mobile-hamburger" onclick="toggleMobileNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <a
+            href="./index.html#home"
+            class="mobile-nav-link"
+            onclick="closeMobileNav()"
+            >Home</a
+          >
+        </li>
+        <li class="mobile-nav-item">
+          <a
+            href="./index.html#experience"
+            class="mobile-nav-link"
+            onclick="closeMobileNav()"
+            >Experience</a
+          >
+        </li>
+        <li class="mobile-nav-item">
+          <a
+            href="./index.html#projects"
+            class="mobile-nav-link"
+            onclick="closeMobileNav()"
+            >Projects</a
+          >
+        </li>
+        <li class="mobile-nav-item">
+          <a
+            href="./index.html#contact"
+            class="mobile-nav-link"
+            onclick="closeMobileNav()"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="blogs-container" id="blogs-main">
+      <!-- Dont change this div else add this id="blogs-main" -->
+
+      <h2 class="section-title">Blog Posts</h2>
+      <p class="section-subtitle">
+        Thoughts, tutorials, and insights on web development and creative work
+      </p>
+
+      <div class="blog-posts-wrapper">
+        <!-- Blog Post 1 -->
+        <article class="blog-post" id="post-1">
+          <div class="post-header">
+            <div class="post-image">
+              <img
+                src="Assets/blog1.jpg"
+                alt="Building Modern Web Experiences with React"
+              />
+            </div>
+            <div class="post-meta">
+              <span class="post-date">📅 May 20, 2025</span>
+              <span class="post-read-time">⏱️ 5 min read</span>
+            </div>
+            <h2 class="post-title">
+              Building Modern Web Experiences with React
+            </h2>
+            <div class="post-tags">
+              <span class="post-tag">React</span>
+              <span class="post-tag">JavaScript</span>
+              <span class="post-tag">Web Development</span>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>
+              React has transformed the way we build web applications. Its
+              component-based architecture isn't just a design pattern—it's a
+              paradigm shift that makes complex UIs manageable and maintainable.
+            </p>
+
+            <h3>Why React?</h3>
+            <p>
+              When I first started with React, I was amazed by how intuitive it
+              felt to break down a UI into reusable pieces. Each component is
+              self-contained, making debugging and updates significantly easier
+              than traditional approaches.
+            </p>
+
+            <h3>Key Benefits</h3>
+            <ul>
+              <li>
+                <strong>Reusability:</strong> Write once, use everywhere.
+                Components can be shared across projects.
+              </li>
+              <li>
+                <strong>Performance:</strong> Virtual DOM ensures efficient
+                updates and rendering.
+              </li>
+              <li>
+                <strong>Ecosystem:</strong> Massive community support and
+                thousands of libraries.
+              </li>
+              <li>
+                <strong>Developer Experience:</strong> Tools like React DevTools
+                make development smooth.
+              </li>
+            </ul>
+
+            <h3>Best Practices I Follow</h3>
+            <p>
+              Through my projects like MoviePlex and ShopKar, I've learned that
+              keeping components small and focused is crucial. Each component
+              should do one thing well. State management becomes easier when you
+              follow this principle.
+            </p>
+
+            <p>
+              Another lesson: don't over-optimize early. React is already fast.
+              Focus on writing clean, readable code first, then optimize if
+              needed.
+            </p>
+
+            <blockquote>
+              "The best code is the code that's easy to understand and maintain,
+              not the cleverest code."
+            </blockquote>
+
+            <p>
+              If you're starting with React, my advice is simple: build
+              projects. Lots of them. Each project teaches you something new
+              about component design, state management, and the React ecosystem.
+            </p>
+          </div>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-post" id="post-2">
+          <div class="post-header">
+            <div class="post-image">
+              <img src="Assets/blog2.png" alt="The Art of Video Editing" />
+            </div>
+            <div class="post-meta">
+              <span class="post-date">📅 May 15, 2025</span>
+              <span class="post-read-time">⏱️ 7 min read</span>
+            </div>
+            <h2 class="post-title">
+              The Art of Video Editing: From Raw Footage to Cinematic Gold
+            </h2>
+            <div class="post-tags">
+              <span class="post-tag">Video Editing</span>
+              <span class="post-tag">DaVinci Resolve</span>
+              <span class="post-tag">Creative</span>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>
+              Video editing is where technical skill meets creative vision. As a
+              freelance video editor, I've learned that great editing is
+              invisible—it guides the viewer's emotions without calling
+              attention to itself.
+            </p>
+
+            <h3>The Foundation: Understanding Your Story</h3>
+            <p>
+              Before touching any software, I always ask: What story am I
+              telling? Every cut, transition, and effect should serve the
+              narrative. Random fancy effects might look cool in isolation, but
+              they can break the viewer's immersion.
+            </p>
+
+            <h3>My Editing Process</h3>
+            <ol>
+              <li>
+                <strong>Organization:</strong> Import all footage and organize
+                by scene or theme
+              </li>
+              <li>
+                <strong>Rough Cut:</strong> Create the basic structure without
+                worrying about perfection
+              </li>
+              <li>
+                <strong>Fine Tuning:</strong> Adjust timing, add transitions,
+                refine the flow
+              </li>
+              <li>
+                <strong>Color Grading:</strong> Enhance mood and consistency
+              </li>
+              <li>
+                <strong>Sound Design:</strong> Add music, sound effects, and mix
+                audio
+              </li>
+              <li>
+                <strong>Final Review:</strong> Watch multiple times, get
+                feedback, polish
+              </li>
+            </ol>
+
+            <h3>Tools and Techniques</h3>
+            <p>
+              I primarily use DaVinci Resolve for its powerful color grading and
+              professional-grade features. The Fusion page lets me create
+              complex motion graphics, while Fairlight handles audio mixing
+              beautifully.
+            </p>
+
+            <p>
+              For transitions, I prefer cuts over fancy effects 90% of the time.
+              A well-timed cut is more powerful than a dissolve or wipe. Save
+              the flashy transitions for moments that need emphasis.
+            </p>
+
+            <h3>Color Grading Magic</h3>
+            <p>
+              Color grading can make or break a video. I always start with
+              exposure and white balance correction, then move to creative
+              looks. Consistency across shots is key—viewers notice when the
+              color shifts unnaturally.
+            </p>
+
+            <blockquote>
+              "In editing, what you leave out is just as important as what you
+              keep in."
+            </blockquote>
+
+            <p>
+              Whether you're editing cinematic content, YouTube videos, or
+              social media reels, remember: the best edits enhance the content
+              without overshadowing it. Technical excellence should serve the
+              creative vision, not the other way around.
+            </p>
+          </div>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-post" id="post-3">
+          <div class="post-header">
+            <div class="post-image">
+              <img src="Assets/blog3.png" alt="CSS Animations" />
+            </div>
+            <div class="post-meta">
+              <span class="post-date">📅 June 10, 2025</span>
+              <span class="post-read-time">⏱️ 6 min read</span>
+            </div>
+            <h2 class="post-title">
+              CSS Animations: Bringing Your Website to Life
+            </h2>
+            <div class="post-tags">
+              <span class="post-tag">CSS</span>
+              <span class="post-tag">Animation</span>
+              <span class="post-tag">UI/UX</span>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>
+              Animations aren't just eye candy—they're essential for creating
+              intuitive, engaging user experiences. When done right, they guide
+              users, provide feedback, and make interactions feel natural and
+              responsive.
+            </p>
+
+            <h3>The Psychology of Animation</h3>
+            <p>
+              Users expect immediate feedback when they interact with elements.
+              A button that responds with a subtle scale or color shift feels
+              alive. A loading spinner tells users to wait. These
+              micro-interactions build trust and improve perceived performance.
+            </p>
+
+            <h3>Performance Matters</h3>
+            <p>
+              The golden rule: animate only <code>transform</code> and
+              <code>opacity</code> properties when possible. These properties
+              don't trigger layout recalculation or repainting, making
+              animations buttery smooth at 60fps.
+            </p>
+
+            <div class="code-block">
+              <pre><code>/* Good - Uses transform for smooth animation */
+.button {
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* Avoid - Animating top causes layout shifts */
+.button:hover {
+  top: -2px; /* Don't do this */
+}</code></pre>
+            </div>
+
+            <h3>Animation Principles I Follow</h3>
+            <ul>
+              <li>
+                <strong>Purposeful:</strong> Every animation should serve a
+                function
+              </li>
+              <li>
+                <strong>Subtle:</strong> Less is more—don't distract from
+                content
+              </li>
+              <li>
+                <strong>Fast:</strong> Keep durations between 200-400ms for most
+                interactions
+              </li>
+              <li>
+                <strong>Natural:</strong> Use easing functions like ease-out for
+                realistic motion
+              </li>
+              <li>
+                <strong>Accessible:</strong> Respect prefers-reduced-motion for
+                users sensitive to animation
+              </li>
+            </ul>
+
+            <h3>Types of Animations</h3>
+            <p>
+              <strong>Transitions:</strong> Perfect for hover states, focus
+              indicators, and simple state changes. They're the easiest to
+              implement and most commonly used.
+            </p>
+
+            <p>
+              <strong>Keyframe Animations:</strong> When you need complex,
+              multi-step animations. Great for loading states, entrance effects,
+              or drawing attention to important elements.
+            </p>
+
+            <h3>Real-World Example</h3>
+            <p>
+              In my portfolio, I use fade-in animations as elements scroll into
+              view. This creates a sense of progressive disclosure, revealing
+              content as users explore. The animation is subtle (0.6s duration)
+              and uses a slight upward movement to feel natural.
+            </p>
+
+            <div class="code-block">
+              <pre><code>@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</code></pre>
+            </div>
+
+            <h3>Accessibility Considerations</h3>
+            <p>Always include this media query to respect user preferences:</p>
+
+            <div class="code-block">
+              <pre><code>@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}</code></pre>
+            </div>
+
+            <blockquote>
+              "Animation is not just about making things move—it's about
+              creating meaningful, delightful experiences."
+            </blockquote>
+
+            <p>
+              Start small. Add a hover effect to your buttons. Fade in content
+              on scroll. Experiment with timing functions. The best way to learn
+              animation is to build and iterate. Your users will notice the
+              difference.
+            </p>
+          </div>
+        </article>
+
+        <!-- Blog Post 4 -->
+        <article class="blog-post" id="post-4">
+          <div class="post-header">
+            <div class="post-image">
+              <img src="Assets/blog4.jpg" alt="Frontend Performance" />
+            </div>
+            <div class="post-meta">
+              <span class="post-date">📅 July 5, 2025</span>
+              <span class="post-read-time">⏱️ 8 min read</span>
+            </div>
+            <h2 class="post-title">
+              Mastering Frontend Performance: Speed Up Your Website
+            </h2>
+            <div class="post-tags">
+              <span class="post-tag">Performance</span>
+              <span class="post-tag">Frontend</span>
+              <span class="post-tag">Optimization</span>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>
+              In today's fast-paced digital landscape, performance isn't just a
+              feature—it's a necessity. Users expect websites to load instantly,
+              and every millisecond counts. A slow website means lost users,
+              reduced conversions, and a poor user experience. As a frontend
+              developer, optimizing performance is one of the most impactful
+              skills you can master.
+            </p>
+
+            <h3>Why Frontend Performance Matters</h3>
+            <p>
+              Studies show that 53% of mobile users abandon websites that take
+              longer than 3 seconds to load. Performance directly affects user
+              satisfaction, SEO rankings, and business metrics. Optimizing your
+              frontend isn't just about making your site faster—it's about
+              respecting your users' time and bandwidth.
+            </p>
+
+            <h3>Key Performance Metrics</h3>
+            <p>
+              Understanding web performance metrics is crucial for measuring and
+              improving your site:
+            </p>
+            <ul>
+              <li>
+                <strong>First Contentful Paint (FCP):</strong> Time until the
+                first content appears
+              </li>
+              <li>
+                <strong>Largest Contentful Paint (LCP):</strong> Time until the
+                largest content element is visible
+              </li>
+              <li>
+                <strong>Cumulative Layout Shift (CLS):</strong> Measure of
+                unexpected layout shifts
+              </li>
+              <li>
+                <strong>Time to Interactive (TTI):</strong> Time until the page
+                is fully interactive
+              </li>
+            </ul>
+
+            <h3>Optimization Techniques I Swear By</h3>
+
+            <h4>1. Code Splitting and Lazy Loading</h4>
+            <p>
+              Instead of sending one massive bundle, split your code into
+              smaller chunks loaded on demand. With React, this is incredibly
+              easy:
+            </p>
+
+            <div class="code-block">
+              <pre><code>import React, { lazy, Suspense } from 'react';
+
+const HeavyComponent = lazy(() =&gt; import('./HeavyComponent'));
+
+export default function App() {
+  return (
+    &lt;Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;
+      &lt;HeavyComponent /&gt;
+    &lt;/Suspense&gt;
+  );
+}</code></pre>
+            </div>
+
+            <h4>2. Image Optimization</h4>
+            <p>
+              Images often account for the majority of a page's weight. Always
+              compress images, use modern formats like WebP, and serve
+              responsive images:
+            </p>
+
+            <div class="code-block">
+              <pre><code>&lt;picture&gt;
+  &lt;source srcset="image.webp" type="image/webp"&gt;
+  &lt;source srcset="image.jpg" type="image/jpeg"&gt;
+  &lt;img src="image.jpg" alt="Description" loading="lazy"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+
+            <h4>3. Minimize JavaScript Execution</h4>
+            <p>
+              Heavy JavaScript can block the main thread. Break up long-running
+              tasks, use Web Workers for heavy computations, and defer
+              non-critical JavaScript:
+            </p>
+
+            <div class="code-block">
+              <pre><code>&lt;!-- Defer non-critical scripts --&gt;
+&lt;script defer src="analytics.js"&gt;&lt;/script&gt;
+
+&lt;!-- Load critical scripts in the head --&gt;
+&lt;script src="critical.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+
+            <h4>4. Implement Caching Strategies</h4>
+            <p>
+              Leverage browser caching and service workers to cache static
+              assets. This dramatically reduces load times for returning
+              visitors:
+            </p>
+
+            <div class="code-block">
+              <pre><code>// Set cache headers
+Cache-Control: max-age=31536000 (for assets with hashes)
+Cache-Control: no-cache (for frequently updated files)</code></pre>
+            </div>
+
+            <h3>Tools I Recommend</h3>
+            <ul>
+              <li>
+                <strong>Google Lighthouse:</strong> Comprehensive audit tool for
+                performance, SEO, and accessibility
+              </li>
+              <li>
+                <strong>WebPageTest:</strong> Detailed performance testing from
+                real browsers
+              </li>
+              <li>
+                <strong>Bundle Analyzer:</strong> Visualize what's in your
+                JavaScript bundle
+              </li>
+              <li>
+                <strong>GTmetrix:</strong> Performance monitoring and
+                recommendations
+              </li>
+            </ul>
+
+            <h3>Real-World Impact</h3>
+            <p>In my projects, I've seen performance improvements lead to:</p>
+            <ul>
+              <li>40% reduction in initial load time through code splitting</li>
+              <li>60% smaller image payloads with WebP and compression</li>
+              <li>
+                Improved Core Web Vitals scores leading to better SEO rankings
+              </li>
+              <li>Better mobile experience for users on slower networks</li>
+            </ul>
+
+            <h3>The Performance Mindset</h3>
+            <p>
+              Performance optimization isn't a one-time task—it's a mindset.
+              Always think about:
+            </p>
+            <ul>
+              <li>What am I shipping to the user?</li>
+              <li>Is this necessary for the initial page load?</li>
+              <li>Can I defer this to improve TTI?</li>
+              <li>How can I reduce the total bundle size?</li>
+            </ul>
+
+            <blockquote>
+              "Performance is a feature. It's not a nice-to-have—it's essential
+              for delivering great user experiences."
+            </blockquote>
+
+            <p>
+              Start measuring your site's performance today. Run Lighthouse,
+              identify bottlenecks, and incrementally improve. Your users will
+              thank you with better engagement, and your business will see
+              improved metrics. Performance optimization is one of the
+              highest-impact skills in frontend development.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <script src="Script/Main/navBar.js"></script>
+    <script src="Script/Main/navBarScrollBehavior.js"></script>
+    <script src="Script/Main/mobileUI.js"></script>
+    <script src="script.js"></script>
+    <script src="Script/blogs-page.js"></script>
+  </body>
+</html>
