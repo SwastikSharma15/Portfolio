@@ -377,3 +377,48 @@ body.dark .video-card.is-visible:hover {
 .videos-grid .video-card:nth-child(4).is-visible {
   transition-delay: 0.4s;
 }
+
+/* Blogs section - fade scroll animation */
+#projects .blogs-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+#projects .blogs-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blog-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.blog-card.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.3s ease;
+}
+
+.blog-card.is-visible:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.dark .blog-card.is-visible:hover {
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+}
+
+.blog-card:nth-child(1).is-visible {
+  transition-delay: 0.1s;
+}
+
+.blog-card:nth-child(2).is-visible {
+  transition-delay: 0.2s;
+}
+
+.blog-card:nth-child(3).is-visible {
+  transition-delay: 0.3s;
+}
