@@ -51,7 +51,8 @@ const observeElements = () => {
     .tech-stack-section,
     .projects-container,
     .videos-container,
-    .fun-area-container
+    .fun-area-container,
+    .blogs-container
   `);
 
   // Start observing each element
@@ -113,6 +114,33 @@ const observeProjectCards = () => {
 
   projectCards.forEach(card => {
     projectObserver.observe(card);
+  });
+};
+
+// Function to handle blog cards with staggered timing
+const observeBlogCards = () => {
+  const blogCards = document.querySelectorAll('.blog-card');
+  
+  const blogObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Add staggered delay based on index
+        setTimeout(() => {
+          entry.target.classList.add('is-visible');
+        }, index * 100); // 100ms delay between each card
+        
+        if (ANIMATION_CONFIG.once) {
+          blogObserver.unobserve(entry.target);
+        }
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -20px 0px'
+  });
+
+  blogCards.forEach(card => {
+    blogObserver.observe(card);
   });
 };
 
@@ -218,7 +246,9 @@ const initScrollAnimations = () => {
       .tech-stack-section,
       .projects-container,
       .videos-container,
-      .fun-area-container
+      .fun-area-container,
+      .blogs-container,
+      .blog-card
     `).forEach(el => {
       el.classList.add('is-visible');
     });
@@ -233,6 +263,7 @@ const initScrollAnimations = () => {
   observeElements();
   observeTechIcons();
   observeProjectCards();
+  observeBlogCards();
   observeTimelineItems();
   observeFormElements();
 
