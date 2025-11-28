@@ -37,7 +37,8 @@
       }
 
       /* Remove scrollbar completely */
-      html, body {
+      html,
+      body {
         height: auto !important;
         overflow-y: auto !important;
       }
@@ -231,6 +232,38 @@
         Thoughts, tutorials, and insights on web development and creative work
       </p>
 
+      <!-- Blog Index/Navigation -->
+      <div class="blog-index">
+        <h3 class="blog-index-title">Quick Navigation</h3>
+        <div class="blog-index-list">
+          <a href="#post-1" class="blog-index-item">
+            <span class="index-number">1</span>
+            <span class="index-title"
+              >Developing Dynamic Web Experiences Using React</span
+            >
+          </a>
+          <a href="#post-2" class="blog-index-item">
+            <span class="index-number">2</span>
+            <span class="index-title"
+              >The Art of Video Editing: From Raw Footage to Cinematic
+              Gold</span
+            >
+          </a>
+          <a href="#post-3" class="blog-index-item">
+            <span class="index-number">3</span>
+            <span class="index-title"
+              >CSS Animations: Bringing Your Website to Life</span
+            >
+          </a>
+          <a href="#post-4" class="blog-index-item">
+            <span class="index-number">4</span>
+            <span class="index-title"
+              >Mastering Frontend Performance: Speed Up Your Website</span
+            >
+          </a>
+        </div>
+      </div>
+
       <div class="blog-posts-wrapper">
         <!-- Blog Post 1 -->
         <article class="blog-post" id="post-1">
@@ -313,6 +346,16 @@
               projects. Lots of them. Each project teaches you something new
               about component design, state management, and the React ecosystem.
             </p>
+          </div>
+          <div class="blog-navigation">
+            <div class="blog-nav-link prev" style="visibility: hidden">
+              <span class="nav-label">← Previous</span>
+              <span class="nav-title"></span>
+            </div>
+            <a href="#post-2" class="blog-nav-link next">
+              <span class="nav-label">Next →</span>
+              <span class="nav-title">Advanced Video Editing Techniques</span>
+            </a>
           </div>
         </article>
 
@@ -411,6 +454,20 @@
               without overshadowing it. Technical excellence should serve the
               creative vision, not the other way around.
             </p>
+          </div>
+          <div class="blog-navigation">
+            <a href="#post-1" class="blog-nav-link prev">
+              <span class="nav-label">← Previous</span>
+              <span class="nav-title"
+                >Developing Dynamic Web Experiences Using React</span
+              >
+            </a>
+            <a href="#post-3" class="blog-nav-link next">
+              <span class="nav-label">Next →</span>
+              <span class="nav-title"
+                >CSS Animations: Bringing Your Website to Life</span
+              >
+            </a>
           </div>
         </article>
 
@@ -554,6 +611,18 @@
               animation is to build and iterate. Your users will notice the
               difference.
             </p>
+          </div>
+          <div class="blog-navigation">
+            <a href="#post-2" class="blog-nav-link prev">
+              <span class="nav-label">← Previous</span>
+              <span class="nav-title">Advanced Video Editing Techniques</span>
+            </a>
+            <a href="#post-4" class="blog-nav-link next">
+              <span class="nav-label">Next →</span>
+              <span class="nav-title"
+                >Mastering Frontend Performance: Speed Up Your Website</span
+              >
+            </a>
           </div>
         </article>
 
@@ -740,6 +809,18 @@ Cache-Control: no-cache (for frequently updated files)</code></pre>
               improved metrics. Performance optimization is one of the
               highest-impact skills in frontend development.
             </p>
+          </div>
+          <div class="blog-navigation">
+            <a href="#post-3" class="blog-nav-link prev">
+              <span class="nav-label">← Previous</span>
+              <span class="nav-title"
+                >CSS Animations: Bringing Your Website to Life</span
+              >
+            </a>
+            <div class="blog-nav-link next" style="visibility: hidden">
+              <span class="nav-label">Next →</span>
+              <span class="nav-title"></span>
+            </div>
           </div>
         </article>
       </div>

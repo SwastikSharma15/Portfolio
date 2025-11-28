@@ -170,19 +170,27 @@ function addCopyButtonsToCodeBlocks() {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            color: #333;
+            border: 2px solid #ddd;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 999;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.dark .scroll-to-top {
+            color: #fff;
+            border-color: #444;
         }
 
         .scroll-to-top.visible {
@@ -191,17 +199,23 @@ function addCopyButtonsToCodeBlocks() {
         }
 
         .scroll-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            border-color: #0070f3;
+            color: #0070f3;
+            transform: translateY(-3px);
+        }
+
+        body.dark .scroll-to-top:hover {
+            border-color: #0070f3;
+            color: #0070f3;
         }
 
         @media (max-width: 768px) {
             .scroll-to-top {
                 bottom: 20px;
                 right: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
             }
         }
     `;

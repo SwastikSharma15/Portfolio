@@ -340,7 +340,175 @@ body.dark .code-block {
   border-color: #333;
 }
 
-/* Responsive Design */
+/* Blog Index/Navigation */
+.blog-index {
+  background: #f8f9fa;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.blog-index-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.blog-index-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.blog-index-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.blog-index-item:hover {
+  background: #f8f9fa;
+  border-color: #0070f3;
+  transform: translateX(5px);
+}
+
+.index-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #0070f3;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.index-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.4;
+}
+
+body.dark .blog-index {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+body.dark .blog-index-title {
+  color: #ffffff;
+}
+
+body.dark .blog-index-item {
+  background: #111111;
+  border-color: #333;
+  color: #ccc;
+}
+
+body.dark .blog-index-item:hover {
+  background: #1a1a1a;
+  border-color: #0070f3;
+}
+
+body.dark .index-title {
+  color: #aaa;
+}
+
+/* Blog Navigation (Previous/Next) */
+.blog-navigation {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+body.dark .blog-navigation {
+  border-top-color: #333;
+}
+
+.blog-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.blog-nav-link.prev {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.blog-nav-link.next {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.blog-nav-link:hover {
+  border-left-color: #0070f3;
+  transform: none;
+}
+
+.blog-nav-link.next:hover {
+  border-left-color: transparent;
+  border-right: 3px solid #0070f3;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+body.dark .blog-nav-link {
+  color: #ccc;
+}
+
+body.dark .blog-nav-link:hover {
+  border-left-color: #0070f3;
+}
+
+body.dark .blog-nav-link.next:hover {
+  border-left-color: transparent;
+  border-right-color: #0070f3;
+}
+
+body.dark .nav-label {
+  color: #666;
+}
+
+body.dark .nav-title {
+  color: #ffffff;
+}
 @media (max-width: 768px) {
   .blogs-container {
     padding: 20px 15px;
@@ -414,5 +582,72 @@ body.dark .code-block {
     padding: 1rem;
     margin: 1.2rem 0;
     font-size: 0.95rem;
+  }
+
+  .blog-index {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-index-title {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .blog-index-list {
+    gap: 0.6rem;
+  }
+
+  .blog-index-item {
+    padding: 0.6rem 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .index-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+
+  .index-title {
+    font-size: 0.9rem;
+  }
+
+  .blog-navigation {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .blog-nav-link {
+    padding: 0.5rem 0;
+    border-left: 3px solid transparent;
+  }
+
+  .blog-nav-link.prev {
+    text-align: left;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+  }
+
+  .blog-nav-link.next {
+    text-align: left;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+    border-right: none;
+  }
+
+  .blog-nav-link.next:hover {
+    border-left-color: #0070f3;
+    border-right: none;
+  }
+
+  .nav-label {
+    font-size: 0.7rem;
+  }
+
+  .nav-title {
+    font-size: 1rem;
   }
 }
