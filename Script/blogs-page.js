@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 
-    // Add reading progress indicator
-    createReadingProgress();
+    // REMOVED: createReadingProgress() - No longer creating the progress bar
 
     // Add fade-in animation for blog posts
     observeBlogPosts();
@@ -25,48 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addCopyButtonsToCodeBlocks();
 });
 
-// Create reading progress bar
-function createReadingProgress() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'reading-progress';
-    progressBar.innerHTML = '<div class="reading-progress-bar"></div>';
-    document.body.appendChild(progressBar);
-
-    // Add CSS for progress bar
-    const style = document.createElement('style');
-    style.textContent = `
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .reading-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            width: 0%;
-            transition: width 0.1s ease;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Update progress on scroll
-    window.addEventListener('scroll', () => {
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight - windowHeight;
-        const scrolled = window.scrollY;
-        const progress = (scrolled / documentHeight) * 100;
-
-        const progressBarElement = document.querySelector('.reading-progress-bar');
-        if (progressBarElement) {
-            progressBarElement.style.width = `${Math.min(progress, 100)}%`;
-        }
-    });
-}
+// REMOVED: createReadingProgress function entirely
 
 // Observe blog posts for fade-in animation
 function observeBlogPosts() {
