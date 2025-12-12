@@ -23,74 +23,104 @@
     <link rel="stylesheet" href="Style/mediaQuery.css" />
     <link rel="stylesheet" href="Style/mobileUI.css" />
     <style>
-      /* Fix button alignment in blogs page */
-      .nav-controls {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
+      /* Replace the <style> section in blogs.html <head> with this: */
 
-      .theme-toggle-wrapper,
-      .music-player-widget {
-        display: flex;
-        align-items: center;
-      }
+/* Fix button alignment in blogs page */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
-      /* Remove scrollbar completely */
-      html,
-      body {
-        height: auto !important;
-        overflow-y: auto !important;
-      }
+.theme-toggle-wrapper,
+.music-player-widget {
+  display: flex;
+  align-items: center;
+}
 
-      body {
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-      }
+/* FIXED: Remove scrollbar but ALLOW scrolling */
+html,
+body {
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
 
-      body::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-      }
+body {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
 
-      html::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-      }
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+}
 
-      /* Remove scrollbar from article elements */
-      article {
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-        overflow: hidden !important;
-      }
+html::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+}
 
-      article::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-      }
+/* FIXED: Remove scrollbar restrictions from article elements */
+article {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overflow: visible !important; /* Changed from hidden */
+}
 
-      .blog-post {
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-        overflow: hidden !important;
-      }
+article::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+}
 
-      .blog-post::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-      }
+.blog-post {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overflow: visible !important; /* Changed from hidden */
+  pointer-events: auto !important; /* Ensure hover works */
+}
 
-      .blog-posts-wrapper {
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-        overflow: visible !important;
-      }
+.blog-post::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+}
 
-      .blog-posts-wrapper::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-      }
+.blog-posts-wrapper {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overflow: visible !important;
+}
+
+.blog-posts-wrapper::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+}
+
+/* Ensure scroll-to-top button is visible */
+.scroll-to-top {
+  pointer-events: auto !important;
+  z-index: 9999 !important;
+}
+
+/* Blogs-only: keep navbar fixed and always visible */
+.nav-2 {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: translateY(0) !important;
+  z-index: 1000;
+}
+
+.nav-2.navbar-hidden {
+  transform: translateY(0) !important;
+}
+
+/* Offset page content to account for fixed navbar height */
+body {
+  padding-top: 72px; /* fallback; adjusted on load via JS */
+}
     </style>
     <link rel="stylesheet" href="Style/navBar.css" />
   </head>
@@ -827,9 +857,21 @@ Cache-Control: no-cache (for frequently updated files)</code></pre>
     </div>
 
     <script src="Script/Main/navBar.js"></script>
-    <script src="Script/Main/navBarScrollBehavior.js"></script>
+    <!-- Disable scroll hide/show behavior for blogs page -->
+    <!-- <script src="Script/Main/navBarScrollBehavior.js"></script> -->
     <script src="Script/Main/mobileUI.js"></script>
     <script src="script.js"></script>
     <script src="Script/blogs-page.js"></script>
+    <script>
+      // Adjust body padding to fixed navbar height and ensure visibility
+      document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.nav-2');
+        if (navbar) {
+          document.body.style.paddingTop = navbar.offsetHeight + 'px';
+          navbar.classList.remove('navbar-hidden');
+          navbar.style.transform = 'translateY(0)';
+        }
+      });
+    </script>
   </body>
 </html>
