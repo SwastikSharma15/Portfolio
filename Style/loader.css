@@ -1,0 +1,309 @@
+/* From Uiverse.io by vinodjangid07 */
+
+/* Loader container - full screen overlay */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white; /* linear-gradient(135deg, #667eea 0%, #764ba2 100%)  Dont change it */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.page-loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.loader {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.truckWrapper {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* truck upper body */
+.truckBody {
+  width: 130px;
+  height: fit-content;
+  margin-bottom: 6px;
+  animation: motion 1s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Viper image overlay on truck */
+.viper-overlay {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 55%;
+  left: 40%;
+  transform: translate(-50%, -50%) scale(2);
+  border-radius: 8px;
+  object-fit: contain;
+  z-index: 10;
+  padding: 2px;
+}
+
+/* truck suspension animation*/
+@keyframes motion {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* truck's tires */
+.truckTires {
+  width: 130px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 0px 15px;
+  position: absolute;
+  bottom: 0;
+}
+
+.truckTires svg {
+  width: 24px;
+}
+
+.road {
+  width: 100%;
+  height: 1.5px;
+  background-color: #282828;
+  position: relative;
+  bottom: 0;
+  align-self: flex-end;
+  border-radius: 3px;
+}
+
+.road::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background-color: #282828;
+  right: -50%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 10px solid white;
+}
+
+.road::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: #282828;
+  right: -65%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 4px solid white;
+}
+
+.lampPost {
+  position: absolute;
+  bottom: 0;
+  right: -90%;
+  height: 90px;
+  animation: roadAnimation 1.4s linear infinite;
+}
+
+@keyframes roadAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-350px);
+  }
+}
+
+/* Loading text */
+/* .loading-text {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 30px;
+  text-align: center;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+} */
+
+/* Hide main content while loading */
+.main-content {
+  display: none;
+  /* transform: translateY(20px);
+  opacity: 0; */
+}
+
+.main-content.loaded {
+  display: block;
+/*   animation: slideInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  } */
+}
+
+/* Prevent scrolling during loading */
+body.loading {
+  overflow: hidden !important;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Ensure no horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
+/* When loader is active */
+body:has(.page-loader:not(.fade-out)) {
+  overflow: hidden !important;
+}
+
+/* Fallback for browsers that don't support :has() */
+.page-loader-active {
+  overflow: hidden !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .truckWrapper {
+    width: 160px;
+    /* height: 80px; */
+  }
+  
+  .truckBody {
+    width: 104px;
+  }
+  
+  .truckTires {
+    width: 130px;
+    transform: scale(0.8);
+  }
+  
+  .loading-text {
+    font-size: 16px;
+  }
+  
+  .viper-overlay {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .truckWrapper {
+    width: 140px;
+    /* height: 70px; */
+  }
+  
+  .truckBody {
+    width: 91px;
+  }
+  
+  .truckTires {
+    width: 130px;
+    transform: scale(0.7);
+  }
+  
+  .loading-text {
+    font-size: 14px;
+  }
+  
+  .viper-overlay {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+
+/* Dark-mode: uniform background across entire site */
+body.dark {
+  background: #0b0b0d !important; /* pick your preferred dark color */
+  color: #e8e8e8 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Let sections and cards be transparent so the body background shows through */
+body.dark section,
+body.dark .videos-container,
+body.dark .projects-container,
+body.dark .video-card,
+body.dark .project-card,
+body.dark .star-game-container {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Ensure navbars and other top containers don't show a different bg */
+body.dark nav,
+body.dark .nav-2,
+body.dark .navbar-glass {
+  background: transparent !important;
+}
+
+/* Keep canvas transparent so the body bg remains visible */
+body.dark canvas {
+  background: transparent !important;
+}
+
+/* Make sure common text and link elements have good contrast */
+body.dark a,
+body.dark .linktext,
+body.dark .home-content h1,
+body.dark .home-content h2,
+body.dark .home-content p,
+body.dark .location,
+body.dark .video-title,
+body.dark .video-description {
+  color: #e8e8e8 !important;
+}

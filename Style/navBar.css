@@ -1,0 +1,229 @@
+/* Nav-2 Layout and Scroll Behavior */
+.nav-2 {
+    position: sticky;
+    top: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 20px 40px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hide navbar when scrolling down */
+.nav-2.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+/* Glassmorphism Navigation Bar */
+.navbar-glass {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+    display: flex !important; /* Instead of font-size: 0 */
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.navbar-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    pointer-events: none;
+}
+
+.navbar-glass .nav-link-glass {
+    height: 100%;
+    font-size: 15px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    vertical-align: top;
+    border: 1px solid transparent;
+}
+
+.navbar-glass .nav-link-glass:hover {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.navbar-glass .nav-animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar-glass:hover .nav-animation {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Individual link widths for your sections */
+.nav-link-glass:nth-child(1) { width: 130px; } /* Home */
+.nav-link-glass:nth-child(2) { width: 130px; } /* Experience */
+.nav-link-glass:nth-child(3) { width: 130px; } /* Projects */
+.nav-link-glass:nth-child(4) { width: 130px; } /* Contact */
+
+/* Animation states - default to home */
+.navbar-glass .start-home, 
+.nav-link-glass:nth-child(1):hover~.nav-animation {
+    width: 130px;
+    left: 0;
+}
+
+.navbar-glass .start-experience, 
+.nav-link-glass:nth-child(2):hover~.nav-animation {
+    width: 130px;
+    left: 130px;
+}
+
+.navbar-glass .start-projects, 
+.nav-link-glass:nth-child(3):hover~.nav-animation {
+    width: 130px;
+    left: 260px;
+}
+
+.navbar-glass .start-contact, 
+.nav-link-glass:nth-child(4):hover~.nav-animation {
+    width: 130px;
+    left: 390px;
+}
+
+/* Ensure Contact link is visible */
+.nav-link-glass[data-section="contact"] {
+    color: #333 !important;
+    display: inline-flex !important;
+    opacity: 1 !important;
+}
+
+/* Dark mode adaptations */
+body.dark .navbar-glass {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .navbar-glass .nav-link-glass {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark .navbar-glass .nav-link-glass:hover {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+body.dark .navbar-glass .nav-animation {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Make contact link white in dark mode */
+body.dark .navbar-glass .nav-link-glass[data-section="contact"] {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Make contact link white on hover in day mode */
+.navbar-glass .nav-link-glass[data-section="contact"]:hover {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Hide glass navbar below 769px to prevent horizontal overflow */
+@media (max-width: 768px) {
+    .navbar-glass {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+    }
+}
+
+/* Ensure glass navbar is visible only on desktop (769px and above) */
+@media (min-width: 769px) {
+    .navbar-glass {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 520px;
+    }
+}
+
+/* For screens between 769px-900px, constrain navbar width */
+@media (min-width: 769px) and (max-width: 900px) {
+    .navbar-glass {
+        width: calc(100vw - 60px);
+        max-width: 520px;
+    }
+}
+
+/* Responsive navigation padding to prevent overflow */
+@media (max-width: 768px) {
+    .nav-2 {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-2 {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-2 {
+        padding: 8px 10px;
+    }
+}
+
+.logo {
+  width: 35px;
+  margin-top: 10px;
+  display: inline-block; /* needed for transform */
+  transition: transform 0.4s ease; /* smooth rotation */
+  transform-origin: center;
+}
+
+.logo:hover {
+  transform: scale(1.4) rotate(180deg);
+}
+
+/* Light mode (default) */
+.light-logo { display: inline; }
+.dark-logo { display: none; }
+
+/* Dark mode */
+body.dark .light-logo { display: none; }
+body.dark .dark-logo { display: inline; }

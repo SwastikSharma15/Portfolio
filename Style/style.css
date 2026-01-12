@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+  touch-action: manipulation; /* Improve touch handling on all devices */
+  position: relative;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto !important;
+    position: relative;
+    height: auto;
+    min-height: 100%;
+  }
+  
+  body {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* For modern browsers */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0); /* transparent */
+  z-index: 10;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  box-shadow: none; /* remove any existing shadow */
+  background: transparent !important;
+  box-shadow: none !important;
+  z-index: 10;
+}
+
+.nav-left-side {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.nav-2 {
+  background: #000000;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-2 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  vertical-align: middle;
+}
+
+/* Align dark mode button with navbar items */
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  /* margin-left: 10px; */
+}
+
+.theme-toggle-wrapper .theme-btn {
+  transform: scale(0.7); /* Optional: to better match nav item size */
+  margin-left: 5px;
+}
+
+/* Remove button extra spacing on small screens */
+@media (max-width: 768px) {
+  .theme-toggle-wrapper .theme-btn {
+    transform: scale(0.9);
+    margin-left: 0;
+  }
+}
+
+/* Updated Home Section */
+#home {
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  padding-bottom: 2rem;
+}
+
+.home-content {
+  position: absolute;
+  top: 35%;
+  left: 17%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #000000;
+  text-align: left;
+  max-width: 650px;
+  padding-top: 60px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateY(-50%);
+  }
+}
+
+.home-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -1px;
+}
+
+.home-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #666;
+  width: 90%;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 0.6rem 1.2rem;
+  margin: 1rem 0 1rem 0;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #444;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+/* Button animation effects */
+.location::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.location:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.location::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  transform: scale(1.2, 1.2);
+}
+
+.location:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.location-icon,
+.location span {
+  position: relative;
+  z-index: 2;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+  filter: invert(0.3);
+  transition: filter 0.3s ease;
+}
+
+.location:hover .location-icon {
+  filter: invert(0.1);
+}
+
+.home-content p {
+  font-size: 1.4rem;
+  color: #555;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-content {
+    left: 5%;
+    max-width: 90%;
+    top: 45%;
+    padding-top: 40px;
+  }
+  .home-content h1 {
+    font-size: 2.8rem;
+  }
+  .home-content h2 {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .home-content p {
+    font-size: 1.2rem;
+  }
+  .location {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Behind content */
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Other sections for scrolling */
+section {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  color: #111;
+}
+#experience,
+#projects,
+#contact {
+  position: relative;
+  z-index: 1
+}
+
+/* Portfolio link animation styles */
+.item {
+  position: relative;
+  display: inline-block;
+  height: 35px;
+  background: transparent;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.linktext {
+  font-size: 1.1em;
+  text-align: center;
+  position: relative;
+  color: #535353;
+  text-decoration: none;
+  font-family: 'Righteous', Arial, sans-serif;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0s;
+}
+
+.linktext::before {
+  display: inline-block;
+  content: attr(data-text);
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.15s;
+  opacity: 1;
+  color: #000000;
+}
+
+.item:hover .linktext {
+  transform: scale(1.3);
+  transition-delay: 0.15s;
+}
+
+.item:hover .linktext::before {
+  transform: translateY(30px);
+  transition-delay: 0s;
+  opacity: 0;
+}
+
+/* Default: light mode (white icon stays white) */
+body.light .location-icon {
+  filter: invert(0); /* No change */
+}
+
+/* Dark mode: invert to black or tint */
+body.dark .location-icon {
+  filter: invert(0); /* Makes white -> black */
+}
+
+::selection {
+  background: yellow;
+  color: black; /* Optional: change text color if needed */
+}

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swastik Sharma</title>
+  <link rel="icon" type="image/webp" href="Assets/SpeedX_Logo_Transparent_white.webp">
+  <link rel="icon" type="image/png" href="Assets/SpeedX_Logo_Transparent_white.png" />
+  <link rel="stylesheet" href="Style/style.css"/>
+  <link rel="stylesheet" href="Style/buttonGroup.css">
+  <link rel="stylesheet" href="Style/darkModeButton.css"/>
+  <link rel="stylesheet" href="Style/night_Home.css"/>
+  <link rel="stylesheet" href="Style/experience.css"/>
+  <link rel="stylesheet" href="Style/night_Exp.css"/>
+  <link rel="stylesheet" href="Style/techStack.css"/>
+  <link rel="stylesheet" href="Style/blogs-page.css">
+  <link rel="stylesheet" href="Style/blogs.css">
+  <link rel="stylesheet" href="Style/projects.css">
+  <link rel="stylesheet" href="Style/projectsVideo.css">
+  <link rel="stylesheet" href="Falling Stars Game/stars.css">
+  <link rel="stylesheet" href="Style/contactMe.css">
+  <link rel="stylesheet" href="Style/musicButton.css">
+  <link rel="stylesheet" href="Style/mobileUI.css">
+  <link rel="stylesheet" href="Style/fadeScroll.css">
+  <link rel="stylesheet" href="Style/mediaQuery.css">
+  <link rel="stylesheet" href="Style/navBar.css">
+  <link rel="stylesheet" href="Style/loader.css">
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader">
+    <div class="loader">
+      <div class="truckWrapper">
+        <div class="truckBody">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 198 93"
+            class="trucksvg"
+          >
+            <path
+              stroke-width="3"
+              stroke="#282828"
+              fill="#F83D3D"
+              d="M135 22.5H177.264C178.295 22.5 179.22 23.133 179.594 24.0939L192.33 56.8443C192.442 57.1332 192.5 57.4404 192.5 57.7504V89C192.5 90.3807 191.381 91.5 190 91.5H135C133.619 91.5 132.5 90.3807 132.5 89V25C132.5 23.6193 133.619 22.5 135 22.5Z"
+            ></path>
+            <path
+              stroke-width="3"
+              stroke="#282828"
+              fill="#7D7C7C"
+              d="M146 33.5H181.741C182.779 33.5 183.709 34.1415 184.078 35.112L190.538 52.112C191.16 53.748 189.951 55.5 188.201 55.5H146C144.619 55.5 143.5 54.3807 143.5 53V36C143.5 34.6193 144.619 33.5 146 33.5Z"
+            ></path>
+            <path
+              stroke-width="2"
+              stroke="#282828"
+              fill="#282828"
+              d="M150 65C150 65.39 149.763 65.8656 149.127 66.2893C148.499 66.7083 147.573 67 146.5 67C145.427 67 144.501 66.7083 143.873 66.2893C143.237 65.8656 143 65.39 143 65C143 64.61 143.237 64.1344 143.873 63.7107C144.501 63.2917 145.427 63 146.5 63C147.573 63 148.499 63.2917 149.127 63.7107C149.763 64.1344 150 64.61 150 65Z"
+            ></path>
+            <rect
+              stroke-width="2"
+              stroke="#282828"
+              fill="#FFFCAB"
+              rx="1"
+              height="7"
+              width="5"
+              y="63"
+              x="187"
+            ></rect>
+            <rect
+              stroke-width="2"
+              stroke="#282828"
+              fill="#282828"
+              rx="1"
+              height="11"
+              width="4"
+              y="81"
+              x="193"
+            ></rect>
+            <rect
+              stroke-width="3"
+              stroke="#282828"
+              fill="#DFDFDF"
+              rx="2.5"
+              height="90"
+              width="121"
+              y="1.5"
+              x="6.5"
+            ></rect>
+            <rect
+              stroke-width="2"
+              stroke="#282828"
+              fill="#DFDFDF"
+              rx="2"
+              height="4"
+              width="6"
+              y="84"
+              x="1"
+            ></rect>
+          </svg>
+          <!-- Viper Image Overlay -->
+          <img src="Assets/viper_loader_image_2_new.png" alt="Viper" class="viper-overlay">
+        </div>
+        <div class="truckTires">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 30 30"
+            class="tiresvg"
+          >
+            <circle
+              stroke-width="3"
+              stroke="#282828"
+              fill="#282828"
+              r="13.5"
+              cy="15"
+              cx="15"
+            ></circle>
+            <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 30 30"
+            class="tiresvg"
+          >
+            <circle
+              stroke-width="3"
+              stroke="#282828"
+              fill="#282828"
+              r="13.5"
+              cy="15"
+              cx="15"
+            ></circle>
+            <circle fill="#DFDFDF" r="7" cy="15" cx="15"></circle>
+          </svg>
+        </div>
+        <div class="road"></div>
+
+        <svg
+          xml:space="preserve"
+          viewBox="0 0 453.459 453.459"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Capa_1"
+          version="1.1"
+          fill="#000000"
+          class="lampPost"
+        >
+          <path
+            d="M252.882,0c-37.781,0-68.686,29.953-70.245,67.358h-6.917v8.954c-26.109,2.163-45.463,10.011-45.463,19.366h9.993
+c-1.65,5.146-2.507,10.54-2.507,16.017c0,28.956,23.558,52.514,52.514,52.514c28.956,0,52.514-23.558,52.514-52.514
+c0-5.478-0.856-10.872-2.506-16.017h9.992c0-9.354-19.352-17.204-45.463-19.366v-8.954h-6.149C200.189,38.779,223.924,16,252.882,16
+c29.952,0,54.32,24.368,54.32,54.32c0,28.774-11.078,37.009-25.105,47.437c-17.444,12.968-37.216,27.667-37.216,78.884v113.914
+h-0.797c-5.068,0-9.174,4.108-9.174,9.177c0,2.844,1.293,5.383,3.321,7.066c-3.432,27.933-26.851,95.744-8.226,115.459v11.202h45.75
+v-11.202c18.625-19.715-4.794-87.527-8.227-115.459c2.029-1.683,3.322-4.223,3.322-7.066c0-5.068-4.107-9.177-9.176-9.177h-0.795
+V196.641c0-43.174,14.942-54.283,30.762-66.043c14.793-10.997,31.559-23.461,31.559-60.277C323.202,31.545,291.656,0,252.882,0z
+M232.77,111.694c0,23.442-19.071,42.514-42.514,42.514c-23.442,0-42.514-19.072-42.514-42.514c0-5.531,1.078-10.957,3.141-16.017
+h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-content">
+    <canvas id="canvas"></canvas>
+
+  <!-- Main navigation bar -->
+  <nav class="nav-2">
+    <!-- Left side: Portfolio link -->
+    <div class="nav-left-side">
+      <a class="item" href="#home">
+        <!-- <div data-text="Portfolio" class="linktext">Portfolio</div> -->
+        <img src="Assets/SpeedX_Logo_Transparent.png" class="logo light-logo" alt="Logo">
+        <img src="Assets/SpeedX_Logo_Transparent_white.png" class="logo dark-logo" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Center: Glassmorphism Navigation -->
+    <div class="navbar-glass">
+      <a href="#home" class="nav-link-glass" data-section="home">Home</a>
+      <a href="#experience" class="nav-link-glass" data-section="experience">Experience</a>
+      <a href="#projects" class="nav-link-glass" data-section="projects">Projects</a>
+      <a href="#contact" class="nav-link-glass" data-section="contact">Contact</a>
+      <div class="nav-animation start-home"></div>
+    </div>
+
+    <!-- Right side: Controls -->
+    <div class="nav-right-side">
+      <div class="nav-controls">
+          <div class="theme-toggle-wrapper">
+              <button class="theme-btn unicode-version" onclick="toggleButton(this)">
+                  <span class="morph-icon"></span>
+              </button>
+          </div>
+
+          <div class="music-player-widget">
+              <div class="play-button-widget">
+                  <div class="container play-button-container">
+                      <label>
+                          <input type="checkbox" class="play-btn animated-play-btn" />
+                          <div class="play-icon animated-play-icon"></div>
+                          <div class="pause-icon animated-pause-icon"></div>
+                          <input type="range" class="seek-slider" min="0" value="0" step="0.1" />
+                          <audio id="siteAudio" src="Assets/City Ruins - Rays of Light (NieR_Automata Original Soundtrack)Audio.mp3" preload="auto" loop></audio>
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Mobile Hamburger Menu -->
+      <div class="mobile-hamburger" onclick="toggleMobileNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+            <a href="#home" class="mobile-nav-link" onclick="closeMobileNav()">Home</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="#experience" class="mobile-nav-link" onclick="closeMobileNav()">Experience</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="#projects" class="mobile-nav-link" onclick="closeMobileNav()">Projects</a>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="#contact" class="mobile-nav-link" onclick="closeMobileNav()">Contact</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <section id="home">
+    
+    <div class="home-content" style="margin-top: 30px;">
+      <h1>Swastik Sharma</h1>
+      <h2>Frontend Developer building sleek & responsive UIs.</h2>
+      <div class="location">
+        <img src="https://img.icons8.com/ios-filled/20/000000/marker.png" alt="Location Icon" class="location-icon" />
+        <span>Himachal Pradesh, India</span>
+      </div>
+
+    <a href="https://swastikmacolio.vercel.app/" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        <div class="location" >
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWV4dGVybmFsLWxpbmstaWNvbiBsdWNpZGUtZXh0ZXJuYWwtbGluayI+PHBhdGggZD0iTTE1IDNoNnY2Ii8+PHBhdGggZD0iTTEwIDE0IDIxIDMiLz48cGF0aCBkPSJNMTggMTN2NmEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMlY4YTIgMiAwIDAgMSAyLTJoNiIvPjwvc3ZnPg==" alt="Location Icon" class="location-icon" />
+            <span>New Portfolio Website</span>
+        </div>
+    </a>
+
+      <p>Writing code that speaks for itself.</p>
+
+      <div class="button-group">
+        <a href="Assets/Swastik_Sharma_Frontend_Developer_Resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="shiny-button">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/export-pdf.png" alt="Resume Icon" />
+            Resume
+        </a>
+
+        <a href="https://github.com/SwastikSharma15" target="_blank" class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/github.png" alt="GitHub" />
+        </a>
+
+        <span class="break-on-xsmall"></span>
+
+        <a href="https://www.linkedin.com/in/swastik-sharma-1a748617a/" target="_blank" class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png" alt="LinkedIn" />
+        </a>
+
+        <a href="mailto:swastik15.sharma.work@gmail.com" class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/gmail-new.png" alt="Gmail Icon" />
+        </a>
+
+        <a href="https://www.youtube.com/@SpeedX_/featured" target="_blank" class="shiny-button">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/youtube-play.png" alt="YouTube" />
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="experience">
+    
+    <div class="container fade-in-section">
+        <nav class="menu">
+            <button class="menu__item active">Experience</button>
+            <button class="menu__item">Education</button>
+            <div class="menu__border menu__pill-background"></div>
+        </nav>
+
+        <div class="content-area">
+            <div class="dropdown-content active" id="experience-content">
+                <div class="content-header experience-header">
+                    <div class="content-icon">💼</div>
+                    <h2 class="content-title">Work Experience</h2>
+                </div>
+                
+                <div class="timeline-item experience-item">
+                    <div class="timeline-icon">
+                        <img src="Assets/speedx_square.png" alt="Freelance Logo" style="width: 100%; height: 100%; border-radius: 50%;" />
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Oct 2022 - Current</div>
+                        <div class="timeline-title">Freelancer in Video Editing</div>
+                        <div class="timeline-company"></div>
+                        <div class="timeline-description">
+                            Collaborating with clients to edit cinematic, YouTube, and reel-style videos tailored to their brand.
+                            Delivering visually engaging content with smooth transitions, color grading, and sound syncing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item experience-item">
+                    <div class="timeline-icon">
+                        <img src="Assets/webhelp_logo.png" alt="Webhelp Logo" style="width:100%; height:100%; border-radius: 50%; object-fit: cover;" />
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">September 2023 - March 2025</div>
+                        <div class="timeline-title">Service Operations Analyst</div>
+                        <div class="timeline-company">Webhelp India Private Limited</div>
+                        <div class="timeline-description">
+                            Delivered efficient support solutions while maintaining service quality and process accuracy. Played a key role in handling customer interactions across multiple platforms.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item experience-item">
+                    <div class="timeline-icon">
+                        <img src="Assets/skillish_pvt_ltd_logo.jpg" alt="Skillish Logo" style="width:100%; height:100%; border-radius: 50%; object-fit: cover;" />
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 2023 - August 2023</div>
+                        <div class="timeline-title">Business Development Analytics Intern</div>
+                        <div class="timeline-company">Skillish</div>
+                        <div class="timeline-description">
+                            Contributed to lead generation efforts and market research to identify potential clients. Supported the business development team in data-driven decision-making and outreach strategies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown-content" id="education-content">
+                <div class="content-header education-header">
+                    <div class="content-icon">🎓</div>
+                    <h2 class="content-title">Education</h2>
+                </div>
+                
+                <div class="timeline-item education-item">
+                    <div class="timeline-icon">
+                        <img src="Assets/SRM.png" alt="Freelance Logo" style="width: 100%; height: 100%; border-radius: 50%;" />
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2023</div>
+                        <div class="timeline-title">B.Tech in Computer Science (Big Data Analytics)</div>
+                        <div class="timeline-company">SRM Institute of Science and Technology, Chennai (Kattankulathur)</div>
+                        <div class="timeline-description">
+                            Developed a student portal named "SRM Utilities" featuring QR code-based attendance and multiple academic tools. 
+                            Gained hands-on experience in database systems, analytics, and full-stack development. Graduated with a final result of 83.02%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item education-item">
+                    <div class="timeline-icon">
+                        <img src="Assets/dav.webp" alt="Freelance Logo" style="width: 100%; height: 100%; border-radius: 50%;" />
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2019</div>
+                        <div class="timeline-title">Senior Secondary (12th Grade)</div>
+                        <div class="timeline-company">DAV Centenary Public School, Mandi, Himachal Pradesh</div>
+                        <div class="timeline-description">
+                            Completed CBSE with 80.2% in Science stream. 
+                            Excelled in Mathematics and Chemistry.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item education-item">
+                    <div class="timeline-icon">
+                        <img src="Assets/dav.webp" alt="Freelance Logo" style="width: 100%; height: 100%; border-radius: 50%;" />
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2017</div>
+                        <div class="timeline-title">Secondary (10th Grade)</div>
+                        <div class="timeline-company">DAV Centenary Public School, Mandi, Himachal Pradesh</div>
+                        <div class="timeline-description">
+                            Scored 8.4 CGPA under CBSE curriculum. 
+                            Demonstrated consistent academic performance across core subjects.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="svg-container">
+        <svg viewBox="0 0 202.9 45.5">
+            <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+                <path d="M6.7,45.5c5.7,0.1,14.1-0.4,23.3-4c5.7-2.3,9.9-5,18.1-10.5c10.7-7.1,11.8-9.2,20.6-14.3c5-2.9,9.2-5.2,15.2-7
+                  c7.1-2.1,13.3-2.3,17.6-2.1c4.2-0.2,10.5,0.1,17.6,2.1c6.1,1.8,10.2,4.1,15.2,7c8.8,5,9.9,7.1,20.6,14.3c8.3,5.5,12.4,8.2,18.1,10.5
+                  c9.2,3.6,17.6,4.2,23.3,4H6.7z"/>
+            </clipPath>
+        </svg>
+    </div>
+    
+  </section>
+
+
+  <section id="projects">
+    
+    <div class="tech-stack-section">
+      <div class="tech-wrapper">
+        <!-- Container containing animation -->
+        <div class="tech-overflow-box">
+          <div class="tech-animation-box">
+            <!-- Tech Stack title -->
+            <h1>Tech Stack</h1>
+            <!-- Displaying the name of current technology -->
+            <h1 id="techName"></h1>
+          </div>
+        </div>
+        <!-- Container with technology icons -->
+        <div class="tech-flexbox">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" name="React JS" alt="React JS" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" name="JavaScript" alt="JavaScript" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" name="HTML5" alt="HTML5" />
+          <span class="break-on-xsmall"></span>         
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" name="CSS3" alt="CSS3" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" name="Tailwind CSS" alt="Tailwind CSS" />         
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" name="Python" alt="Python" />
+          <span class="break-on-small"></span>
+          <img src="Assets/DR.png" name="DaVinci Resolve" alt="DaVinci Resolve" />
+          <img src="Assets/spline_logo.647803e0.png" alt="Spline" name="Spline"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" name="Figma" alt="Figma" />
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="projects-container">
+        <h2 class="section-title">Recent projects</h2>
+        
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+              <div class="project-image">
+                  <div class="project-placeholder"><img class="project-placeholder-img" src="Assets/tidy_tasks.png" alt="📝"></div>
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">TidyTasks</h3>
+                  <p class="project-description">Built a task management app with dynamic add/edit/delete features, smooth UI interactions, and real-time updates using React hooks.</p>
+                  <div class="project-tags">
+                      <span class="project-tag">HTML</span>
+                      <span class="project-tag">CSS</span>
+                      <span class="project-tag">React JS</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="https://tidytasks.vercel.app/" target="_blank" class="project-link primary">Visit Site</a>
+                      <a href="https://github.com/SwastikSharma15/TidyTasks" target="_blank" class="project-link secondary">GitHub</a>
+                  </div>
+              </div>
+          </div>
+          
+
+            <!-- Project 1: Movie Plex -->
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder"><img class="project-placeholder-img" src="Assets/movieplex.webp" alt="🎮"></div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Movie Plex</h3>
+                    <p class="project-description">Built a responsive movie browsing app with React and Vite, featuring real-time search via external APIs and optimized performance using hooks and reusable components.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">React JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://movieplexapp.vercel.app/" target="_blank" class="project-link primary">Visit Site</a>
+                        <a href="https://github.com/SwastikSharma15/Movie-React-App" target="_blank" class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Project 2: Amazon Clone -->
+            <!-- <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder"><img class="project-placeholder-img" src="Assets/Amazon.webp" alt="💼"></div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Amazon Clone</h3>
+                    <p class="project-description">A responsive Amazon-inspired website with shopping cart, order placement, real-time tracking, and order history features.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://swastiksharma15.github.io/Amazon-with-HTML-CSS-JS/" target="_blank" class="project-link primary">Visit Site</a>
+                        <a href="https://github.com/SwastikSharma15/Amazon-with-HTML-CSS-JS" class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="project-card">
+              <div class="project-image">
+                  <div class="project-placeholder">
+                      <img class="project-placeholder-img" src="Assets/ShopKar.webp" alt="🛒">
+                  </div>
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">ShopKar</h3>
+                  <p class="project-description">
+                      Full-featured e-commerce platform using React.js and Vite with dynamic cart, RESTful APIs, advanced search/filtering, and mobile-first checkout.
+                  </p>
+                  <div class="project-tags">
+                      <span class="project-tag">HTML</span>
+                      <span class="project-tag">CSS</span>
+                      <span class="project-tag">React JS</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="https://shopkar-react.vercel.app" target="_blank" class="project-link primary">Visit Site</a>
+                      <a href="https://github.com/SwastikSharma15/ShopKar" target="_blank" class="project-link secondary">GitHub</a>
+                  </div>
+              </div>
+            </div>
+
+
+            <div class="project-card">
+              <div class="project-image">
+                  <div class="project-placeholder"><img class="project-placeholder-img" src="Assets/Portfolio.webp" alt="💻"></div>
+              </div>
+              <div class="project-content">
+                  <h3 class="project-title">Portfolio Website</h3>
+                  <p class="project-description">A responsive developer portfolio featuring interactive UI, dark mode, and project highlights.</p>
+                  <div class="project-tags">
+                      <span class="project-tag">HTML</span>
+                      <span class="project-tag">CSS</span>
+                      <span class="project-tag">JavaScript</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="https://swastiksharma15.github.io/Portfolio/index.html" target="_blank" class="project-link primary">Visit Site</a>
+                      <a href="https://github.com/SwastikSharma15/Portfolio" target="_blank" class="project-link secondary">GitHub</a>
+                  </div>
+              </div>
+          </div>
+
+            
+        </div>
+
+        <a href="projects.html" class="more-projects">
+            More projects <span class="arrow">→</span>
+        </a>
+    </div>
+
+    <!-- Add this BEFORE videos-container -->
+    <div class="blogs-container fade-in-section">
+        <h2 class="section-title">Recent Blog Posts</h2>
+        
+        <div class="blogs-grid">
+            <!-- Blog Post 1 -->
+            <div class="blog-card" onclick="window.location.href='blogs.html#post-1'">
+                <div class="blog-image">
+                    <div class="blog-placeholder">
+                        <img class="blog-placeholder-img" src="Assets/blog1.jpg" alt="Blog Post 1">
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 May 5 2025</span>
+                        <span class="blog-read-time">⏱️ 5 min read</span>
+                    </div>
+                    <h3 class="blog-title">Developing Dynamic Web Experiences Using React</h3>
+                    <p class="blog-excerpt">
+                        Explore how React's component-based architecture revolutionizes frontend development, 
+                        making it easier to build scalable and maintainable web applications.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">React</span>
+                        <span class="blog-tag">JavaScript</span>
+                        <span class="blog-tag">Web Development</span>
+                    </div>
+                    <a href="blogs.html#post-1" class="blog-read-more">
+                        Read More <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-card" onclick="window.location.href='blogs.html#post-2'">
+                <div class="blog-image">
+                    <div class="blog-placeholder">
+                        <img class="blog-placeholder-img" src="Assets/blog2.png" alt="Blog Post 2">
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 May 15, 2025</span>
+                        <span class="blog-read-time">⏱️ 7 min read</span>
+                    </div>
+                    <h3 class="blog-title">The Art of Video Editing: Shaping Raw Footage Into Visual Art</h3>
+                    <p class="blog-excerpt">
+                        Dive into the creative process of video editing, covering essential techniques, 
+                        color grading tips, and how to tell compelling stories through visual media.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Video Editing</span>
+                        <span class="blog-tag">DaVinci Resolve</span>
+                        <span class="blog-tag">Creative</span>
+                    </div>
+                    <a href="blogs.html#post-2" class="blog-read-more">
+                        Read More <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-card" onclick="window.location.href='blogs.html#post-3'">
+                <div class="blog-image">
+                    <div class="blog-placeholder">
+                        <img class="blog-placeholder-img" src="Assets/blog3.png" alt="Blog Post 3">
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 June 10, 2025</span>
+                        <span class="blog-read-time">⏱️ 6 min read</span>
+                    </div>
+                    <h3 class="blog-title">CSS Animations: Bringing Your Website to Life</h3>
+                    <p class="blog-excerpt">
+                        Learn how to create smooth, performant animations using modern CSS techniques 
+                        that enhance user experience without compromising site performance.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">CSS</span>
+                        <span class="blog-tag">Animation</span>
+                        <span class="blog-tag">UI/UX</span>
+                    </div>
+                    <a href="blogs.html#post-3" class="blog-read-more">
+                        Read More <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="blog-card" onclick="window.location.href='blogs.html#post-4'">
+                <div class="blog-image">
+                    <div class="blog-placeholder">
+                        <img class="blog-placeholder-img" src="Assets/blog4.jpg" alt="Blog Post 4">
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 July 5, 2025</span>
+                        <span class="blog-read-time">⏱️ 8 min read</span>
+                    </div>
+                    <h3 class="blog-title">Mastering Frontend Performance: Speed Up Your Website</h3>
+                    <p class="blog-excerpt">
+                        Discover essential techniques to optimize your frontend code, reduce bundle size, 
+                        and create blazing-fast web applications that users will love.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Performance</span>
+                        <span class="blog-tag">Frontend</span>
+                        <span class="blog-tag">Optimization</span>
+                    </div>
+                    <a href="blogs.html#post-4" class="blog-read-more">
+                        Read More <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <a href="blogs.html" class="more-blogs">
+            View All Posts <span class="arrow">→</span>
+        </a>
+    </div>
+
+    <div class="videos-container">
+        <h2 class="section-title">Featured Videos</h2>
+        
+        <div class="videos-grid">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-preview">
+                    <video controls width="100%" poster="Assets/those_eyes.webp">
+                      <source src="Assets/Eyes_kits_new.webm" type="video/webm">
+                      <source src="Assets/Eyes_kits.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-preview">
+                    <video controls width="100%" poster="Assets/hooriii.webp">
+                      <source src="Assets/Horimiya_new.webm" type="video/webm">
+                      <source src="Assets/Horimiya.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>           
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-preview">
+                    <video controls width="100%" poster="Assets/elden.webp">
+                      <source src="Assets/Elden_ring_new.webm" type="video/webm">
+                      <source src="Assets/Elden_ring.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>           
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-preview">
+                    <video controls width="100%" poster="Assets/val.webp">
+                      <source src="Assets/val_fern_new.webm" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>           
+            </div>
+        </div>
+
+        <a href="https://www.youtube.com/@SpeedX_/videos" class="more-videos" target="_blank">
+            More videos <span class="arrow">→</span>
+        </a>
+    </div>
+
+    <div class="fun-area-container">
+        <h2 class="section-title fun-area-title">Fun Area</h2>
+        
+        <div class="star-game-wrapper">
+            <div class="star-game-container">
+                <!-- Start Screen -->
+                <div class="star-start-screen" id="startScreen">
+                    <h1 class="star-game-title">⭐ Catch the Falling Stars ⭐</h1>
+                    <input type="text" class="star-name-input" id="playerName" placeholder="Enter your name" maxlength="20">
+                    
+                    <!-- Device Selection -->
+                    <div class="device-selection">
+                        <h3>Select your device:</h3>
+                        <div class="device-options">
+                            <div class="device-option" id="desktopOption">
+                                <div class="device-icon">🖥️</div>
+                                <div class="device-label">Desktop</div>
+                            </div>
+                            <div class="device-option" id="mobileOption">
+                                <div class="device-icon">📱</div>
+                                <div class="device-label">Mobile</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="star-instructions" id="gameInstructions">
+                        <p><strong>How to Play:</strong></p>
+                        <p id="controlInstructions">Please select your device first</p>
+                        <p>Catch as many falling stars as you can in 45 seconds!</p>
+                    </div>
+                    <button class="star-start-btn" id="startBtn" disabled>Let's Go!</button>
+                </div>
+
+                <!-- Game HUD -->
+                <div class="star-hud" id="gameHud" style="display: none;">
+                    <div>Your Score: <span id="currentScore">0</span></div>
+                    <div>Current Highest Score: <span id="highScore">0</span></div>
+                </div>
+
+                <div class="star-timer" id="gameTimer" style="display: none;">45</div>
+
+                <!-- Game Canvas -->
+                <canvas class="star-game-canvas" id="gameCanvas" style="display: none;"></canvas>
+
+                <!-- Mobile Controls -->
+                <div class="mobile-controls" id="mobileControls">
+                    <div class="mobile-btn left" id="leftBtn"></div>
+                    <div class="mobile-btn right" id="rightBtn"></div>
+                </div>
+
+                <!-- Game Over Screen -->
+                <div class="star-game-over" id="gameOverScreen">
+                    <h2>Game Over!</h2>
+                    <div class="star-final-score" id="finalScore">Your Final Score: 0</div>
+                    <div class="star-high-score-info" id="highScoreInfo">Current Highest Score: 60</div>
+                    <div id="playerGreeting"></div>
+                    <div class="star-celebration" id="celebrationMessage"></div>
+                    <button class="star-play-again-btn" id="playAgainBtn">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </section>
+
+
+
+  <section class="contact-section" id="contact" style="display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important;">
+        <div class="contact-container fade-in-section">
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-subtitle">
+                Have a project in mind or just want to chat? I'd love to hear from you. 
+                Send me a message and I'll get back to you as soon as possible.
+            </p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="Enter your email address"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        class="form-textarea" 
+                        placeholder="Tell me about your project or just say hello..."
+                        required
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Send Message
+                </button>
+                
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+  </div> <!-- End main-content -->
+
+  <script src="Script/blogs-page.js"></script>
+  <script src="Script/Main/loader.js"></script>
+  <script src="script.js"></script>
+  <script src="Script/Cursor/cursorTrail.js"></script>
+  <script src="Script/Main/exp.js"></script>
+  <script src="Script/Main/techStack.js"></script>
+  <script src="Script/Main/projects.js"></script>
+  <script src="Falling Stars Game/stars.js"></script>
+  <script src="Script/Main/fadeScroll.js"></script>
+  <script src="Script/Main/mobileUI.js"></script>
+  <script src="Script/Main/navBar.js"></script>
+  <script src="Script/Main/navBarScrollBehavior.js"></script>
+  <script src="Script/Main/contactFix.js"></script>
+  
+</body>
+</html>

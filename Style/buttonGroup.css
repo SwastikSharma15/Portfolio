@@ -1,0 +1,150 @@
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.shiny-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #000000;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background-color: #333;
+  background-image: linear-gradient(to bottom right, #f1f1f1, #bebebe),
+                    linear-gradient(125deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 53%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100%, 200%;
+  background-position: 0px, -250px;
+  animation: 4s border-glint linear infinite;
+  box-shadow: rgba(0,0,0,0.2) 3px 3px 5px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.shiny-button img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1); /* makes icons white */
+}
+
+.shiny-button:hover {
+  background-color: #d8d8d8; /* <- lighter color on hover */
+  background-image: linear-gradient(to bottom right, #dcdcdc, #c5c5c5),
+                    linear-gradient(125deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 53%);
+  color: #000;
+}
+
+/* 🔥 Icon filter fix */
+.shiny-button:hover img {
+  filter: invert(1); /* Makes black icons white on hover */
+}
+
+
+.shiny-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(125deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 52%);
+  animation: glint 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glint {
+  0% { left: -120%; }
+  8% { left: 50%; }
+  100% { left: 50%; }
+}
+
+@keyframes border-glint {
+  0%   { background-position: 0px, -250px; }
+  25%  { background-position: 0px, -200px; }
+  75%  { background-position: 0px, 50px; }
+  100% { background-position: 0px, 50px; }
+}
+
+ /* NIght Mode */
+body.dark .shiny-button {
+  background: #3b3b3b; /* Updated to darker gray */
+  background-image: linear-gradient(to bottom right, #4a4a4a, #2a2a2a),
+                    linear-gradient(125deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 53%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100%, 200%;
+  background-position: 0px, -250px;
+  animation: 4s border-glint-dark linear infinite;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff; /* White text */
+  box-shadow: rgba(255, 255, 255, 0.2) 3px 3px 5px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+body.dark .shiny-button:hover {
+  background: rgba(244, 244, 244, 0.1); /* Swapped: now uses old normal background */
+  background-image: linear-gradient(to bottom right, #5a5a5a, #3a3a3a),
+                    linear-gradient(125deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 53%);
+  border: 2px solid #d8d8d8;
+  color: #fff; /* White text on hover */
+  transition: all 0.3s ease;
+}
+
+/* Icon color fixes for dark mode */
+body.dark .shiny-button img {
+  filter: invert(0); /* Keep icons white in dark mode */
+}
+
+body.dark .shiny-button:hover img {
+  filter: invert(0); /* Keep icons white on hover */
+}
+
+/* Dark mode surface shine animation */
+body.dark .shiny-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(125deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 52%);
+  animation: glint-dark 4s linear infinite;
+  pointer-events: none;
+}
+
+/* Dark mode keyframes for border shine */
+@keyframes border-glint-dark {
+  0%   { background-position: 0px, -250px; }
+  25%  { background-position: 0px, -200px; }
+  75%  { background-position: 0px, 50px; }
+  100% { background-position: 0px, 50px; }
+}
+
+/* Dark mode keyframes for surface shine */
+@keyframes glint-dark {
+  0% { left: -120%; }
+  8% { left: 50%; }
+  100% { left: 50%; }
+}
+
+.break-on-xsmall {
+  display: none;
+  flex-basis: 100%;
+  height: 0;
+}
+
+@media (max-width: 420px) {
+  .break-on-xsmall {
+    display: block;
+  }
+}

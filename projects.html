@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <link rel="icon" type="image/png" href="Assets/SpeedX_Logo_Transparent_white.webp" />
+    <link rel="icon" type="image/png" href="Assets/SpeedX_Logo_Transparent_white.png" />
+    <link rel="stylesheet" href="Style/projects.css">
+    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/night_Home.css">
+    <link rel="stylesheet" href="Style/buttonGroup.css">
+    <link rel="stylesheet" href="Style/darkModeButton.css">    
+    <link rel="stylesheet" href="Style/musicButton.css">
+    <link rel="stylesheet" href="Style/navBar.css">
+    <link rel="stylesheet" href="Style/mediaQuery.css">
+    <link rel="stylesheet" href="Style/mobileUI.css">
+    <style>
+        /* Fix button alignment in projects page */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .theme-toggle-wrapper,
+        .music-player-widget {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Main navigation bar -->
+    <nav class="nav-2">
+        <!-- Left side: Portfolio link -->
+        <div class="nav-left-side">
+            <a class="item" href="./index.html#home">
+                <img src="Assets/SpeedX_Logo_Transparent.png" class="logo light-logo" alt="Logo">
+                <img src="Assets/SpeedX_Logo_Transparent_white.png" class="logo dark-logo" alt="Logo">
+            </a>
+        </div>
+
+        <!-- Center: Glassmorphism Navigation -->
+        <div class="navbar-glass">
+            <a href="./index.html#home" class="nav-link-glass" data-section="home">Home</a>
+            <a href="./index.html#experience" class="nav-link-glass" data-section="experience">Experience</a>
+            <a href="./index.html#projects" class="nav-link-glass" data-section="projects">Projects</a>
+            <a href="./index.html#contact" class="nav-link-glass" data-section="contact">Contact</a>
+            <div class="nav-animation start-projects"></div>
+        </div>
+
+        <!-- Right side: Controls -->
+        <div class="nav-right-side">
+            <div class="nav-controls">
+                <div class="theme-toggle-wrapper">
+                    <button class="theme-btn unicode-version" onclick="toggleButton(this)">
+                        <span class="morph-icon"></span>
+                    </button>
+                </div>
+
+                <div class="music-player-widget">
+                    <div class="play-button-widget">
+                        <div class="container play-button-container">
+                            <label>
+                                <input type="checkbox" class="play-btn animated-play-btn" />
+                                <div class="play-icon animated-play-icon"></div>
+                                <div class="pause-icon animated-pause-icon"></div>
+                                <input type="range" class="seek-slider" min="0" value="0" step="0.1" />
+                                <audio id="siteAudio" src="Assets/City Ruins - Rays of Light (NieR_Automata Original Soundtrack)Audio.mp3" preload="auto" loop></audio>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Hamburger Menu -->
+            <div class="mobile-hamburger" onclick="toggleMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="./index.html#home" class="mobile-nav-link" onclick="closeMobileNav()">Home</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="./index.html#experience" class="mobile-nav-link" onclick="closeMobileNav()">Experience</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="./index.html#projects" class="mobile-nav-link" onclick="closeMobileNav()">Projects</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="./index.html#contact" class="mobile-nav-link" onclick="closeMobileNav()">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="projects-container" id="projects-main">  <!-- Dont change this div else add this id="projects-main" -->
+
+        <h2 class="section-title">Recent projects</h2>
+        
+        <div class="projects-grid">
+            <!-- Projects will be dynamically rendered by JavaScript -->
+        </div>
+    </div>
+
+    <script src="Script/Main/navBar.js"></script>
+    <script src="Script/Main/navBarScrollBehavior.js"></script>
+    <script src="Script/Main/projectsProject.js"></script>
+    <script src="Script/Main/mobileUI.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

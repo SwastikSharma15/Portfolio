@@ -1,0 +1,161 @@
+.tech-stack-section {
+  padding: 4.5rem 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 30vh; */
+  background: transparent;
+}
+
+.tech-wrapper {
+  width: fit-content;
+  text-align: center;
+}
+
+.tech-overflow-box {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  height: 50px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.tech-animation-box {
+  transition: all ease-in-out 240ms;
+}
+
+.tech-stack-section h1 {
+  margin: 0;
+  margin-top: 2px;
+  height: 50px;
+  text-align: center;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tech-hovered {
+  transform: translateY(-50%);
+}
+
+.tech-flexbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tech-flexbox img {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  display: block;
+  transition: all ease-in-out 100ms;
+  border-radius: 8px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tech-flexbox img:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode styles */
+body.dark .tech-stack-section h1 {
+  color: #f5f5f5 !important;
+}
+
+body.dark .tech-flexbox img {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+body.dark .tech-flexbox img:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+}
+
+/* Fix SVG height issues on GitHub Pages */
+.tech-stack svg,
+.tech-item svg,
+svg {
+    height: auto !important;
+    max-height: 100px; /* Adjust based on your needs */
+    width: auto;
+    display: block;
+}
+
+/* Specific fix for tech stack icons */
+.tech-stack .tech-item {
+    height: auto;
+    max-height: 120px; /* Adjust as needed */
+}
+
+.tech-stack .tech-item svg {
+    height: 100% !important;
+    max-height: 100px !important;
+    width: auto;
+}
+
+/* Alternative approach - set specific dimensions */
+.tech-icon {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.tech-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+}
+
+.break-on-small {
+  display: block;
+  flex-basis: 100%;
+  height: 0;
+}
+
+.break-on-xsmall {
+  display: none;
+  flex-basis: 100%;
+  height: 0;
+}
+
+@media (max-width: 420px) {
+  .break-on-xsmall {
+    display: block;
+  }
+  
+  .tech-stack-section {
+    padding: 4.5rem 10px;
+  }
+  
+  .tech-overflow-box {
+    width: calc(100vw - 20px);
+    max-width: 350px;
+  }
+  
+  .tech-flexbox {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-stack-section {
+    padding: 4.5rem 20px;
+  }
+  
+  .tech-overflow-box {
+    width: calc(100vw - 40px);
+    max-width: 380px;
+  }
+}

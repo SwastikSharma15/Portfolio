@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Stars</title>
+    <link rel="stylesheet" href="stars.css">
+    
+</head>
+<body>
+    <div class="star-game-wrapper">
+        <div class="star-game-container">
+            <!-- Start Screen -->
+            <div class="star-start-screen" id="startScreen">
+                <h1 class="star-game-title">⭐ Catch the Falling Stars ⭐</h1>
+                <input type="text" class="star-name-input" id="playerName" placeholder="Enter your name" maxlength="20">
+                <div class="star-instructions">
+                    <p><strong>How to Play:</strong></p>
+                    <p>Use <strong>A & D</strong> keys or <strong>← & →</strong> arrow keys to move your basket</p>
+                    <p>Catch as many falling stars as you can in 45 seconds!</p>
+                </div>
+                <button class="star-start-btn" id="startBtn">Let's Go!</button>
+            </div>
+
+            <!-- Game HUD -->
+            <div class="star-hud" id="gameHud" style="display: none;">
+                <div>Score: <span id="currentScore">0</span></div>
+                <div>High Score: <span id="highScore">0</span></div>
+            </div>
+
+            <div class="star-timer" id="gameTimer" style="display: none;">45</div>
+
+            <!-- Game Canvas -->
+            <canvas class="star-game-canvas" id="gameCanvas" style="display: none;"></canvas>
+
+            <!-- Game Over Screen -->
+            <div class="star-game-over" id="gameOverScreen">
+                <h2>Game Over!</h2>
+                <div class="star-final-score" id="finalScore">Final Score: 0</div>
+                <div id="playerGreeting"></div>
+                <button class="star-play-again-btn" id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="stars.js"></script>
+</body>
+</html>

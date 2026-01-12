@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Set a consistent base font size */
+    font-size: 16px;
+    --bgColorMenu: #1d1d27;
+    --bgColorExperience: #ff8c00;
+    --bgColorEducation: #4343f5;
+    --duration: 0.7s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    /* Explicitly set base font size */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 0.5rem;
+}
+
+/* Menu styles */
+.menu {
+    margin: 0 auto;
+    display: flex;
+    width: 30em;
+    /* Use rem instead of em for more predictable sizing */
+    font-size: 1.2rem;
+    padding: 0 2rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgColorMenu);
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    z-index: 5;
+}
+
+.menu__item {
+    all: unset;
+    flex-grow: 1;
+    z-index: 100;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    align-items: center;
+    will-change: transform;
+    justify-content: center;
+    padding: 0.8em 0 1em;
+    transition: transform var(--duration);
+    color: white;
+    font-weight: 500;
+    /* Use rem for consistent sizing */
+    font-size: 0.85rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu__item::before {
+    content: "";
+    z-index: -1;
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(0);
+    transition: background-color var(--duration), transform var(--duration);
+}
+
+.menu__item.active {
+    transform: translate3d(0, -0.8em, 0);
+}
+
+.menu__item.active::before {
+    transform: scale(1);
+}
+
+.menu__item:nth-child(1).active::before {
+    background-color: var(--bgColorExperience);
+}
+
+.menu__item:nth-child(2).active::before {
+    background-color: var(--bgColorEducation);
+}
+
+.menu__border {
+    left: 0;
+    bottom: 99%;
+    width: 10em;
+    height: 2.4em;
+    position: absolute;
+    clip-path: url(#menu);
+    will-change: transform;
+    background-color: var(--bgColorMenu);
+    transition: transform var(--duration);
+}
+
+/* Content area styles */
+.content-area {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.dropdown-content {
+    display: none;
+    padding: 2rem;
+    /* Explicitly set font size to prevent inheritance issues */
+    font-size: 1rem;
+}
+
+.dropdown-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Content header styles */
+.content-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.content-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+    font-weight: bold;
+    /* Explicit font size */
+    font-size: 1.2rem;
+}
+
+.experience-header .content-icon {
+    background-color: var(--bgColorExperience);
+}
+
+.education-header .content-icon {
+    background-color: var(--bgColorEducation);
+}
+
+.content-title {
+    /* Use rem for consistent sizing */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Timeline styles */
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 1.25rem;
+    top: 3rem;
+    bottom: -1rem;
+    width: 2px;
+    background: linear-gradient(to bottom, #ddd, transparent);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    /* Explicit font size */
+    font-size: 0.8rem;
+    color: white;
+    font-weight: bold;
+}
+
+.experience-item .timeline-icon {
+    background-color: var(--bgColorExperience);
+}
+
+.education-item .timeline-icon {
+    background-color: var(--bgColorEducation);
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-date {
+    color: #666;
+    /* Use rem for consistent sizing */
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+    /* Use rem for consistent sizing */
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+    color: #666;
+    /* Use rem for consistent sizing */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+    color: #555;
+    line-height: 1.6;
+    /* Use rem for consistent sizing */
+    font-size: 1rem;
+}
+
+/* SVG container */
+.svg-container {
+    width: 0;
+    height: 0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 50em) {
+    .menu {
+        font-size: 1rem;
+        width: 18em;
+    }
+    
+    .container {
+        max-width: 96vw; /* use viewport width to keep a small comfortable gap */
+        padding: 1rem 0.5rem;
+    }
+    
+    .dropdown-content {
+        padding: 1rem;
+    }
+
+    .content-title {
+        font-size: 1.3rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Font inheritance fixes */
+.container * {
+    font-size: inherit !important;
+}
+
+.timeline-date {
+    font-size: 0.85rem !important;
+    font-weight: 400 !important;
+}
+
+.timeline-company {
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+}
+
+.timeline-description {
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+}
+
+/* SIMPLE MENU SOLUTION - Remove the weird border element */
+.menu {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    background: #f5f5f5;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.menu__item {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #666;
+}
+
+.menu__item.active {
+    background: #000000;
+    color: white;
+    font-weight: 600;
+}
+
+.menu__item:hover:not(.active) {
+    background: rgba(255, 107, 53, 0.1);
+    /* color: #ff6b35; */
+    color: var(--bgColorExperience);
+}
+.menu__item:nth-child(2):hover:not(.active) {
+    background: rgba(67, 67, 245, 0.1);
+    color: var(--bgColorEducation);
+}
+
+/* Hide the problematic border elements */
+.menu__pill-background,
+.menu__border {
+    display: none !important;
+}

@@ -1,0 +1,127 @@
+/* Dark mode styles for timeline component */
+
+body.dark #experience {
+    background-color: #121212;
+}
+
+/* Container and menu dark mode */
+body.dark .menu {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    gap: 2rem;
+}
+
+body.dark .menu__item {
+    color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+body.dark .menu__item.active {
+    background: #121212;
+}
+
+body.dark .menu__item:hover:not(.active) {
+    background: rgba(255, 107, 53, 0.1);
+    /* color: #ff6b35; */
+    color: var(--bgColorExperience);
+}
+body.dark .menu__item:nth-child(2):hover:not(.active) {
+    background: rgba(67, 67, 245, 0.1);
+    color: var(--bgColorEducation);
+}
+
+/* Content area dark mode */
+body.dark .content-area {
+    background: #121212;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border: 1px solid #333;
+}
+
+body.dark .dropdown-content {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+/* Content header dark mode */
+body.dark .content-header {
+    border-bottom: 2px solid #333;
+}
+
+body.dark .content-title {
+    color: #f5f5f5;
+}
+
+/* Timeline item dark mode */
+body.dark .timeline-item::before {
+    background: linear-gradient(to bottom, #555, transparent);
+}
+
+body.dark .timeline-content {
+    color: #f1f1f1;
+}
+
+body.dark .timeline-date {
+    color: #bbb;
+}
+
+body.dark .timeline-title {
+    color: #f5f5f5;
+}
+
+body.dark .timeline-company {
+    color: #ccc;
+}
+
+body.dark .timeline-description {
+    color: #e0e0e0;
+}
+
+/* Icon backgrounds remain the same for brand consistency */
+body.dark .experience-header .content-icon,
+body.dark .experience-item .timeline-icon {
+    background-color: var(--bgColorExperience); /* Keep orange */
+}
+
+body.dark .education-header .content-icon,
+body.dark .education-item .timeline-icon {
+    background-color: var(--bgColorEducation); /* Keep blue */
+}
+
+/* Enhanced contrast for better readability in dark mode */
+body.dark .timeline-title {
+    font-weight: 700; /* Slightly bolder for better contrast */
+}
+
+body.dark .content-title {
+    font-weight: 700; /* Slightly bolder for better contrast */
+}
+
+/* Scrollbar styling for dark mode (if needed) */
+body.dark .content-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark .content-area::-webkit-scrollbar-track {
+    background: #2c2c2c;
+}
+
+body.dark .content-area::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+body.dark .content-area::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Menu border element dark mode (in case it's used) */
+body.dark .menu__border {
+    background-color: #2c2c2c;
+}
+
+/* Responsive adjustments for dark mode */
+@media screen and (max-width: 50em) {
+    body.dark .content-area {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+}
