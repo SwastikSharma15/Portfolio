@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="Style/blogs.css">
   <link rel="stylesheet" href="Style/projects.css">
   <link rel="stylesheet" href="Style/projectsVideo.css">
-  <link rel="stylesheet" href="Falling Stars Game/stars.css">
   <link rel="stylesheet" href="Style/contactMe.css">
   <link rel="stylesheet" href="Style/musicButton.css">
   <link rel="stylesheet" href="Style/mobileUI.css">
@@ -25,6 +24,41 @@
   <link rel="stylesheet" href="Style/mediaQuery.css">
   <link rel="stylesheet" href="Style/navBar.css">
   <link rel="stylesheet" href="Style/loader.css">
+  
+  <!-- Fun Area Styles -->
+  <style>
+    .fun-area-container {
+      padding: 30px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .fun-area-container .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: -1px;
+    }
+    
+    .fun-area-title {
+      font-family: 'Chewy', cursive;
+    }
+    
+    .star-game-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    /* Dark mode compatibility */
+    body.dark .fun-area-container .section-title {
+      color: #f5f5f5;
+    }
+  </style>
 </head>
 <body>
   <!-- Page Loader -->
@@ -248,7 +282,7 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
         <span>Himachal Pradesh, India</span>
       </div>
 
-    <a href="https://swastikmacolio.vercel.app/" 
+    <a href="https://swastikmacolio.in/" 
         target="_blank" 
         rel="noopener noreferrer">
         <div class="location" >
@@ -748,62 +782,15 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
         <h2 class="section-title fun-area-title">Fun Area</h2>
         
         <div class="star-game-wrapper">
-            <div class="star-game-container">
-                <!-- Start Screen -->
-                <div class="star-start-screen" id="startScreen">
-                    <h1 class="star-game-title">⭐ Catch the Falling Stars ⭐</h1>
-                    <input type="text" class="star-name-input" id="playerName" placeholder="Enter your name" maxlength="20">
-                    
-                    <!-- Device Selection -->
-                    <div class="device-selection">
-                        <h3>Select your device:</h3>
-                        <div class="device-options">
-                            <div class="device-option" id="desktopOption">
-                                <div class="device-icon">🖥️</div>
-                                <div class="device-label">Desktop</div>
-                            </div>
-                            <div class="device-option" id="mobileOption">
-                                <div class="device-icon">📱</div>
-                                <div class="device-label">Mobile</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="star-instructions" id="gameInstructions">
-                        <p><strong>How to Play:</strong></p>
-                        <p id="controlInstructions">Please select your device first</p>
-                        <p>Catch as many falling stars as you can in 45 seconds!</p>
-                    </div>
-                    <button class="star-start-btn" id="startBtn" disabled>Let's Go!</button>
-                </div>
-
-                <!-- Game HUD -->
-                <div class="star-hud" id="gameHud" style="display: none;">
-                    <div>Your Score: <span id="currentScore">0</span></div>
-                    <div>Current Highest Score: <span id="highScore">0</span></div>
-                </div>
-
-                <div class="star-timer" id="gameTimer" style="display: none;">45</div>
-
-                <!-- Game Canvas -->
-                <canvas class="star-game-canvas" id="gameCanvas" style="display: none;"></canvas>
-
-                <!-- Mobile Controls -->
-                <div class="mobile-controls" id="mobileControls">
-                    <div class="mobile-btn left" id="leftBtn"></div>
-                    <div class="mobile-btn right" id="rightBtn"></div>
-                </div>
-
-                <!-- Game Over Screen -->
-                <div class="star-game-over" id="gameOverScreen">
-                    <h2>Game Over!</h2>
-                    <div class="star-final-score" id="finalScore">Your Final Score: 0</div>
-                    <div class="star-high-score-info" id="highScoreInfo">Current Highest Score: 60</div>
-                    <div id="playerGreeting"></div>
-                    <div class="star-celebration" id="celebrationMessage"></div>
-                    <button class="star-play-again-btn" id="playAgainBtn">Play Again</button>
-                </div>
-            </div>
+            <iframe 
+                src="Falling Stars Game/standalone-game.html" 
+                width="620" 
+                height="620" 
+                frameborder="0"
+                style="border: none; border-radius: 15px; background: transparent;">
+                Your browser does not support iframes. 
+                <a href="Falling Stars Game/standalone-game.html" target="_blank">Play the game in a new window</a>
+            </iframe>
         </div>
     </div>
 
@@ -872,7 +859,6 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
   <script src="Script/Main/exp.js"></script>
   <script src="Script/Main/techStack.js"></script>
   <script src="Script/Main/projects.js"></script>
-  <script src="Falling Stars Game/stars.js"></script>
   <script src="Script/Main/fadeScroll.js"></script>
   <script src="Script/Main/mobileUI.js"></script>
   <script src="Script/Main/navBar.js"></script>
